@@ -33,10 +33,10 @@ Vyhlaska 358/2013 Sb.: https://www.zakonyprolidi.cz/cs/2013-358
 
 Cenik (asi jen sestav!!!): https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-udaju-z-KN/Dalkovy-pristup/Uctovani-vystupu-z-KN-poskytovanych-DP-A-WSDP.aspx
 
-Z tohoto vyplyva, ze jen "sestavy" jsou zpoplatnene podle toho ceniku (pdf je drazsi nez xml z nejakeho duvodu!?) a vsechny dotazy, co nejsou "sestavy", jsou "bezuplatne", tj. vsechny operace ze "Service:" v souborech:
+Z tohoto vyplyva, ze jen "sestavy" jsou zpoplatnene podle toho ceniku (pdf je drazsi nez xml z nejakeho duvodu!?) a vsechny dotazy, co nejsou "sestavy", jsou "bezuplatne", tj. vsechny operace v souborech:
 
-* [popisy_sluzeb/informace.txt](popisy_sluzeb/informace.txt)
-* [popisy_sluzeb/vyhledat.txt](popisy_sluzeb/vyhledat.txt)
-* [popisy_sluzeb/ctios.txt](popisy_sluzeb/ctios.txt)
+* [popisy_sluzeb/informace.txt.ops](popisy_sluzeb/informace.txt.ops)
+* [popisy_sluzeb/vyhledat.txt.ops](popisy_sluzeb/vyhledat.txt.ops)
+* [popisy_sluzeb/ctios.txt.ops](popisy_sluzeb/ctios.txt.ops)
 
 .. by mely byt zdarma, oni jen trackuji na co se dotazujes.
