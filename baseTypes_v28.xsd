@@ -1,0 +1,1877 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://katastr.cuzk.cz/baseTypes/v2.8" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xmime="http://www.w3.org/2005/05/xmlmime"
+	targetNamespace="http://katastr.cuzk.cz/baseTypes/v2.8" elementFormDefault="qualified"
+	version="2.8.0">
+
+	<xs:simpleType name="KatastrUzemiKodType">
+		<xs:annotation>
+			<xs:documentation>Kód katastrálního území.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="KatastrUzemiNazevType">
+		<xs:annotation>
+			<xs:documentation>Název katastrálního území.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="48"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaKmenoveCisloType">
+		<xs:annotation>
+			<xs:documentation>Kmenové číslo parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="99999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaPoddeleniType">
+		<xs:annotation>
+			<xs:documentation>Poddělení parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaDilType">
+		<xs:annotation>
+			<xs:documentation>Díl parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaZpusobUrceniVymeryKodType">
+		<xs:annotation>
+			<xs:documentation>Způsob určení výměry parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaTypZEType">
+		<xs:annotation>
+			<xs:documentation>Způsob evidence parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaDruhPozemkuKodType">
+		<xs:annotation>
+			<xs:documentation>Druh pozemku parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaTypType">
+		<xs:annotation>
+			<xs:documentation>Typ parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaTypNazevType">
+		<xs:annotation>
+			<xs:documentation>Typ parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaZpusobVyuzitiKodType">
+		<xs:annotation>
+			<xs:documentation>Způsob využití parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaVymeraType">
+		<xs:annotation>
+			<xs:documentation>Výměra parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="IdType">
+		<xs:annotation>
+			<xs:documentation>Společný typ pro všechny ID.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999999999999999999999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="KrajKodType">
+		<xs:annotation>
+			<xs:documentation>Kód kraje.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="KrajNazevType">
+		<xs:annotation>
+			<xs:documentation>Název kraje.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="48"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NKrajKodType">
+		<xs:annotation>
+			<xs:documentation> Kód kraje definovaného po roce 1960. Významově odpovídá VÚSC.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OkresKodType">
+		<xs:annotation>
+			<xs:documentation>Kód okresu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OkresNazevType">
+		<xs:annotation>
+			<xs:documentation>Název okresu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="48"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CastObceKodType">
+		<xs:annotation>
+			<xs:documentation>Kód části obce.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CastObceNazevType">
+		<xs:annotation>
+			<xs:documentation>Název části obce.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="48"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MestskaCastKodType">
+		<xs:annotation>
+			<xs:documentation>Kód městské části.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MestskaCastNazevType">
+		<xs:annotation>
+			<xs:documentation>Název městské části.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="48"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypStavbyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypPravnihoVztahuKodType">
+		<xs:annotation>
+			<xs:documentation>Typ pravního vztahu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CpCeType">
+		<xs:annotation>
+			<xs:documentation>1 - číslo popisné, 2- číslo evidenční.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="JednotkaCisloType">
+		<xs:annotation>
+			<xs:documentation>Číslo jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="9999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="IcoType">
+		<xs:annotation>
+			<xs:documentation>IČ.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="99999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RcKompletniType">
+		<xs:annotation>
+			<xs:documentation>Rodné číslo.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="9"/>
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RcType">
+		<xs:annotation>
+			<xs:documentation>Rodné číslo.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloStavbyType">
+		<xs:annotation>
+			<xs:documentation>Číslo stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999999999999999999999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpusobVyuzitiStavbyType">
+		<xs:annotation>
+			<xs:documentation>Kód způsobu využití stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="LVCisloType">
+		<xs:annotation>
+			<xs:documentation>Číslo listu vlastnictví.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="JednotkaZpusobVyuzitiKodType">
+		<xs:annotation>
+			<xs:documentation>Kód způsobu využití jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="JednotkaZpusobVyuzitiNazevType">
+		<xs:annotation>
+			<xs:documentation>Název způsobu využití jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="JednotkaTypJednotkyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="JednotkaTypJednotkyNazevType">
+		<xs:annotation>
+			<xs:documentation>Název typu jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VlastnictviPodilCitatelType">
+		<xs:annotation>
+			<xs:documentation>Podíl vlastnictví - čitatel</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999999999999999999999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VlastnictviPodilJmenovatelType">
+		<xs:annotation>
+			<xs:documentation>Podíl vlastnictví - jmenovatel.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999999999999999999999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NazevFirmyType">
+		<xs:annotation>
+			<xs:documentation>Název firmy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DoplnekIcoType">
+		<xs:annotation>
+			<xs:documentation>Doplněnk IČO.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PrijmeniType">
+		<xs:annotation>
+			<xs:documentation>Příjmení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="JmenoType">
+		<xs:annotation>
+			<xs:documentation>Jméno.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TitulPredJmenemType">
+		<xs:annotation>
+			<xs:documentation>Titul před jménem.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="35"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TitulZaJmenemType">
+		<xs:annotation>
+			<xs:documentation>Titul za jménem.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UliceKodType">
+		<xs:annotation>
+			<xs:documentation>Kód ulice.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UliceNazevType">
+		<xs:annotation>
+			<xs:documentation>Název ulice.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="48"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloDomovniType">
+		<xs:annotation>
+			<xs:documentation>Číslo domovní.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloEvidencniType">
+		<xs:annotation>
+			<xs:documentation>Číslo evidenční.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloOrientacniType">
+		<xs:annotation>
+			<xs:documentation>Číslo orientační.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PSCType">
+		<xs:annotation>
+			<xs:documentation>Poštovní směrovací číslo.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="99999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="SestavyMaxCenaType">
+		<xs:annotation>
+			<xs:documentation>Maximální cena sestavy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="9999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="SestavyCisloJednaciType">
+		<xs:annotation>
+			<xs:documentation>Číslo jednací sestavy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="SestavyPoradoveCisloType">
+		<xs:annotation>
+			<xs:documentation>Pořadové číslo sestavy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="SestavyUcelKodType">
+		<xs:annotation>
+			<xs:documentation>Kód účelu sestavy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="FormatSestavyType">
+		<xs:annotation>
+			<xs:documentation>Výstupní formát sestavy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pdf"/>
+			<xs:enumeration value="xml"/>
+			<xs:enumeration value="html"/>
+			<xs:enumeration value="zip"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="AnoNeType">
+		<xs:annotation>
+			<xs:documentation>a - Ano, n - Ne</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="a"/>
+			<xs:enumeration value="n"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MapaSouradniceXType">
+		<xs:annotation>
+			<xs:documentation>Souřadnice X mapy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="9"/>
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MapaSouradniceYType">
+		<xs:annotation>
+			<xs:documentation>Souřadnice Y mapy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="8"/>
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MapaVzdalenostType">
+		<xs:annotation>
+			<xs:documentation>Vzdálenost.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="8"/>
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MapaTypBoduType">
+		<xs:annotation>
+			<xs:documentation>Typ bodu na mapě.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="p"/>
+			<xs:enumeration value="s"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MapaFormatPapiruType">
+		<xs:annotation>
+			<xs:documentation>Formát papíru pro mapu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A3"/>
+			<xs:enumeration value="A4"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MapaMeritkoType">
+		<xs:annotation>
+			<xs:documentation>Měřítko mapy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:enumeration value="500"/>
+			<xs:enumeration value="1000"/>
+			<xs:enumeration value="2000"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ReportStavType">
+		<xs:annotation>
+			<xs:documentation>Stav zpracování sestavy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="čeká"/>
+			<xs:enumeration value="vytváří se"/>
+			<xs:enumeration value="podepisuje se"/>
+			<xs:enumeration value="zpracován"/>
+			<xs:enumeration value="chyba při vytváření"/>
+			<xs:enumeration value="chyba při zpracování"/>
+			<xs:enumeration value="zaúčtován"/>
+			<xs:enumeration value="zrušen"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DatumOdType">
+		<xs:annotation>
+			<xs:documentation>Omezení: datum od.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="DatumDoType">
+		<xs:annotation>
+			<xs:documentation>Omezení: datum do.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="DatumPozadavkuType">
+		<xs:annotation>
+			<xs:documentation>Datum a čas odeslání požadavku.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="DatumSpusteniType">
+		<xs:annotation>
+			<xs:documentation>Datum a čas spuštění vytváření sestavy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="RizeniCisloType">
+		<xs:annotation>
+			<xs:documentation>Číslo řízení: XXX-čččččččč/RRRR-ččč , kde xxx je typ řízení, čččččččč je pořadové číslo, RRRR je rok, ččč je kód pracoviště.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\p{L}{1,3}\-[0-9]{1,8}/[0-9]{4}\-[0-9]{2,3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypSeznamuObjektuType">
+		<xs:annotation>
+			<xs:documentation>Typ seznamu objektů - PAR_S parcely, STA_S stavby, JED_S jednotky, PRA_S právo stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PAR_S"/>
+			<xs:enumeration value="STA_S"/>
+			<xs:enumeration value="JED_S"/>
+			<xs:enumeration value="PRA_S"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="IdObjektuType">
+		<xs:annotation>
+			<xs:documentation>Id objektu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999999999999999999999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UdalostiIdOdType">
+		<xs:annotation>
+			<xs:documentation>Id události, od kterého se zobrazuje seznam událostí.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999999999999999999999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UdalostiMaxPolozekType">
+		<xs:annotation>
+			<xs:documentation>Maximální počet položek seznamu událostí.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="9999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CiselnikDatumType">
+		<xs:annotation>
+			<xs:documentation>Číselník - datum.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="CiselnikNazevType">
+		<xs:annotation>
+			<xs:documentation>Číselník - název.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PracovisteKodType">
+		<xs:annotation>
+			<xs:documentation>Kód pracoviště.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PracovisteNazevType">
+		<xs:annotation>
+			<xs:documentation>Název pracoviště.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PracovisteDatovaSchrankaType">
+		<xs:annotation>
+			<xs:documentation>Datová schránka pracoviště.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DicType">
+		<xs:annotation>
+			<xs:documentation>DIČ</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="14"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="FaxTelefonType">
+		<xs:annotation>
+			<xs:documentation>Telefonní číslo, nestrukturovaný typ.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="33"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="EmailType">
+		<xs:annotation>
+			<xs:documentation>E-mailová adresa, musí splňovat následující podmínku formátu [A-Za-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(\.[A-Za-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@([A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+			<xs:pattern
+				value="[A-Za-z0-9!#$%&amp;'*+/=?^_`{|}~\-]+(\.[A-Za-z0-9!#$%&amp;'*+/=?^_`{|}~\-]+)*@([A-Za-z0-9]([A-Za-z0-9\-]*[A-Za-z0-9])?\.)+[A-Za-z0-9]([A-Za-z0-9\-]*[A-Za-z0-9])"
+			/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OperaceRizeniKodType">
+		<xs:annotation>
+			<xs:documentation>Kód operace řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OperaceRizeniNazevType">
+		<xs:annotation>
+			<xs:documentation>Název operace řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OperaceRizeniStavType">
+		<xs:annotation>
+			<xs:documentation>Stav operace řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpusobCislovaniParcelyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód způsobu číslování parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpusobCislovaniParcelyNazevType">
+		<xs:annotation>
+			<xs:documentation>Název způsobu číslování parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DruhPozemkuKodType">
+		<xs:annotation>
+			<xs:documentation>Kód druhu pozemku.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DruhPozemkuNazevType">
+		<xs:annotation>
+			<xs:documentation>Název druhu pozemku.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VyuzitiStavbyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód využití stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VyuzitiStavbyNazevType">
+		<xs:annotation>
+			<xs:documentation>Název využití stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VyuzitiJednotkyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód využití jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VyuzitiJednotkyNazevType">
+		<xs:annotation>
+			<xs:documentation>Název využití jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VyuzitiPozemkuKodType">
+		<xs:annotation>
+			<xs:documentation>Kód využití pozemku.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VyuzitiPozemkuNazevType">
+		<xs:annotation>
+			<xs:documentation>Název využití pozemku.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DmlOperaceKodType">
+		<xs:annotation>
+			<xs:documentation>Kód DML operace.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DmlOperaceNazevType">
+		<xs:annotation>
+			<xs:documentation>Název DML operace.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UrceniVymeryKodType">
+		<xs:annotation>
+			<xs:documentation>Kód určení výměry.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UrceniVymeryNazevType">
+		<xs:annotation>
+			<xs:documentation>Název určení výměry.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpusobOchranyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód způsobu ochrany.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpusobOchranyNazevType">
+		<xs:annotation>
+			<xs:documentation>Název způsobu ochrany.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypPravnihoVztahuNazevType">
+		<xs:annotation>
+			<xs:documentation>Název typu právního vztahu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UcelKodType">
+		<xs:annotation>
+			<xs:documentation>Kód účelu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UcelNazevType">
+		<xs:annotation>
+			<xs:documentation>Název účelu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypStavbyNazevType">
+		<xs:annotation>
+			<xs:documentation>Název typu stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZdrojCislovaniZEKodType">
+		<xs:annotation>
+			<xs:documentation>Kód zdroje číslování ZE.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZdrojCislovaniZENazevType">
+		<xs:annotation>
+			<xs:documentation>Název zdroje číslování ZE.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZdrojCislovaniZEZkratkaType">
+		<xs:annotation>
+			<xs:documentation>Zkratka zdroje číslování ZE.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypOperaceKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu operace.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypOperaceNazevType">
+		<xs:annotation>
+			<xs:documentation>Název typu operace.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PredmetRizeniKodType">
+		<xs:annotation>
+			<xs:documentation>Kód předmětu řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PredmetRizeniNazevType">
+		<xs:annotation>
+			<xs:documentation>Název předmětu řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypParcelyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypParcelyNazevType">
+		<xs:annotation>
+			<xs:documentation>Název typu parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ParcelaTypeType">
+		<xs:annotation>
+			<xs:documentation>Typ parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PKN">
+				<xs:annotation>
+					<xs:documentation>Parcela katastru nemovitostí.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PZE">
+				<xs:annotation>
+					<xs:documentation>Parcela zjednodušené evidence.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypJednotkyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypJednotkyNazevType">
+		<xs:annotation>
+			<xs:documentation>Nazev typu jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypOSKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu OS.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypOSNazevType">
+		<xs:annotation>
+			<xs:documentation>Název typu OS.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="KategorieKodType">
+		<xs:annotation>
+			<xs:documentation>Kód kategorie.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="KategorieNazevType">
+		<xs:annotation>
+			<xs:documentation>Název kategorie.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypRizeniKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypRizeniNazevType">
+		<xs:annotation>
+			<xs:documentation>Název typu řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpravaWSKodType">
+		<xs:annotation>
+			<xs:documentation>Kód zprávy WS.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpravaWSNazevType">
+		<xs:annotation>
+			<xs:documentation>Název zprávy WS.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpravaWSTypType">
+		<xs:annotation>
+			<xs:documentation>Typ zprávy WS.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypKompreseType">
+		<xs:annotation>
+			<xs:documentation>Typ komprese.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ZIP"/>
+			<xs:enumeration value="GZIP"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RizeniCisloPodaniType">
+		<xs:annotation>
+			<xs:documentation>Číslo podání řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="24"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RizeniCreateDateType">
+		<xs:annotation>
+			<xs:documentation>Datum založení řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="RizeniPraresKodType">
+		<xs:annotation>
+			<xs:documentation>Kód pracoviště řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RizeniPoradoveCisloType">
+		<xs:annotation>
+			<xs:documentation>Pořadové číslo řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="99999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RizeniRokType">
+		<xs:annotation>
+			<xs:documentation>Rok řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RizeniPopisType">
+		<xs:annotation>
+			<xs:documentation>Popis řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="RizeniUzisysUsernameType">
+		<xs:annotation>
+			<xs:documentation>Systémové jméno uživatele, který založil řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DruhUcastnikaType">
+		<xs:annotation>
+			<xs:documentation>Druh účastníka. Určuje zda je účastník fyzická osoba, právnická osoba, apod. Viz číselník druhů účastníka.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>Právnická osoba.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>Fyzická osoba.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>Ostatní.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>Právnická osoba státní zprávy.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypUcastnikaKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu účastníka.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DatumVytvoreniType">
+		<xs:annotation>
+			<xs:documentation>Datum vytvoření.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="HesloType">
+		<xs:annotation>
+			<xs:documentation>Heslo.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="AdresaTypType">
+		<xs:annotation>
+			<xs:documentation>Typ adresy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>adresa organizace</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>adresa provozní jednotky</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>adresa pracoviště</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation>trvalý pobyt, bydliště v cizině</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="5">
+				<xs:annotation>
+					<xs:documentation>adresa přechodného bydliště</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="6">
+				<xs:annotation>
+					<xs:documentation>stanoviště u vozidla</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="7">
+				<xs:annotation>
+					<xs:documentation>místo události</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="8">
+				<xs:annotation>
+					<xs:documentation>trvalá doručovací adresa dle EO</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="9">
+				<xs:annotation>
+					<xs:documentation>doručovací adresa</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TextType">
+		<xs:annotation>
+			<xs:documentation>Obecný text používaný v případě poznámek, popisů, ale také v případě textu pro fulltext vyhledávání.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4000"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="StatKodType">
+		<xs:annotation>
+			<xs:documentation>Kód státu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="StatNazevType">
+		<xs:annotation>
+			<xs:documentation>Název státu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ObecKodType">
+		<xs:annotation>
+			<xs:documentation>Kód obce.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ObecNazevType">
+		<xs:annotation>
+			<xs:documentation>Název obce.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="48"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypVlastnikaType">
+		<xs:annotation>
+			<xs:documentation>Typ vlastníka.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OFO">
+				<xs:annotation>
+					<xs:documentation>Fyzická osoba.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OPO">
+				<xs:annotation>
+					<xs:documentation>Právnická osoba.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BSM">
+				<xs:annotation>
+					<xs:documentation>Společné jmění manželů (Bezpodílové spoluvlastnictví manželů).</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypVlastnikaSestavyType">
+		<xs:annotation>
+			<xs:documentation>Typ vlastníka sestavy.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="TypVlastnikaType">
+			<xs:enumeration value="OFO">
+				<xs:annotation>
+					<xs:documentation>Fyzická osoba.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="OPO">
+				<xs:annotation>
+					<xs:documentation>Právnická osoba.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypListinyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód typu listiny.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="99999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DruhListinyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód druhu listiny.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NazevSouboruType">
+		<xs:annotation>
+			<xs:documentation>Název souboru.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="3"/>
+			<xs:maxLength value="254"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="IdPrilohyWSType">
+		<xs:annotation>
+			<xs:documentation>Identifikátor přílohy webové služby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DruhCislovaniParType">
+		<xs:annotation>
+			<xs:documentation>Druh číslování parcely.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CenaType">
+		<xs:annotation>
+			<xs:documentation>Cena.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="8"/>
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NazevReportuType">
+		<xs:annotation>
+			<xs:documentation>Název reportu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:normalizedString">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloJednaciType">
+		<xs:annotation>
+			<xs:documentation>Číslo jednací.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:normalizedString">
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PocetStranType">
+		<xs:annotation>
+			<xs:documentation>Počet stran dokumentu.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpravaServeruTypeType">
+		<xs:annotation>
+			<xs:documentation>Úroveň zprávy se serveru.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INFORMACE">
+				<xs:annotation>
+					<xs:documentation> Informativní zprávy o průběhu zpracování požadavku.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VAROVANI">
+				<xs:annotation>
+					<xs:documentation> Důležité informace pro klientskou aplikaci týkající se zpracování požadavku. Může například obsahovat informaci o blížím se vypršení hesla uživatele. </xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CHYBA">
+				<xs:annotation>
+					<xs:documentation> Chyby blokující zpracování požadavku.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UcelPravaStavbyKodType">
+		<xs:annotation>
+			<xs:documentation>Kód účelu práva stavby.</xs:documentation>
+		</xs:annotation>
+      	<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UcelPravaStavbyNazevType">
+		<xs:annotation>
+			<xs:documentation>Název účelu práva stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="StavbaSoucastiType">
+		<xs:annotation>
+			<xs:documentation>Příznak součástí stavby (R: právo stavby, P: parcela).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="R"/>
+			<xs:enumeration value="P"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DatovaSchrankaIdType">
+		<xs:annotation>
+			<xs:documentation>Identifikátor datové schránky.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="uuidType">
+		<xs:annotation>
+			<xs:documentation>Univerzální unikátní identifikátor. (http://en.wikipedia.org/wiki/Universally_unique_identifier)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DruhDMLOperaceType">
+		<xs:annotation>
+			<xs:documentation>Druh DML operace (insert / update / delete).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="INS"/>
+			<xs:enumeration value="UPD"/>
+			<xs:enumeration value="DEL"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DoplnkovyPopisJpvType">
+		<xs:annotation>
+			<xs:documentation>Doplňkový popis JPV.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PoradiTextJpvType">
+		<xs:annotation>
+			<xs:documentation>Text vyjadřující případné přednostní pořadí.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OperaceFunkceKod">
+		<xs:annotation>
+			<xs:documentation>Kód funkce řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxExclusive value="999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="MestskyObvodNazevType">
+		<xs:annotation>
+			<xs:documentation>Městský obvod.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DokladCisloType">
+		<xs:annotation>
+			<xs:documentation>Číslo identifikačního dokladu fyzické osoby - OFO.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DokladTypType">
+		<xs:annotation>
+			<xs:documentation>Typ identifikačního dokladu fyzické osoby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="P">
+				<xs:annotation>
+					<xs:documentation>Pas.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ID">
+				<xs:annotation>
+					<xs:documentation>Občanský průkaz.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IR">
+				<xs:annotation>
+					<xs:documentation>Povolení k pobytu.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="VS">
+				<xs:annotation>
+					<xs:documentation>Vízový štítek.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PS">
+				<xs:annotation>
+					<xs:documentation>Pobytový štítek.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloZPMZType">
+		<xs:annotation>
+			<xs:documentation>Rezervované číslo ZPMZ v daném k.ú.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="99999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloPBPPType">
+		<xs:annotation>
+			<xs:documentation>Rezervované číslo PBPP.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ZpusobUhradyType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="F">
+				<xs:annotation>
+					<xs:documentation>Faktura.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="U">
+				<xs:annotation>
+					<xs:documentation>Převod z účtu.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="I">
+				<xs:annotation>
+					<xs:documentation>Inkaso.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PredcisliBankUctuType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloBankUctuType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="9999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="KodBankyType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="ExtIdentifikaceRizeniType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PodobaPoskytnutiType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ELEKTRONICKA">
+				<xs:annotation>
+					<xs:documentation>Soubor není určen k tisku.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LISTINNA">
+				<xs:annotation>
+					<xs:documentation>Výstup určen k vytištění.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="TypBankUctuType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="B">
+				<xs:annotation>
+					<xs:documentation>Běžný</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="I">
+				<xs:annotation>
+					<xs:documentation>Inkasní</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CharakteristikaOSKodType">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="99"></xs:maxInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="KodAdresnihoMistaType">
+		<xs:annotation>
+			<xs:documentation>Kód adresního místa z RÚIAN.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:maxInclusive value="999999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="StavDatOSType">
+		<xs:annotation>
+			<xs:documentation>Stav aktuálnosti dat.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="-1">
+				<xs:annotation>
+					<xs:documentation>OS platný v minulosti, navazuje další záznam.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation>OS aktuálně platný</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>OS ukončen, již nenavazuje další záznam.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloRokuType">
+		<xs:restriction base="xs:unsignedInt">
+			<xs:minInclusive value="1789" />
+			<xs:maxInclusive value="9999" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="CisloMesiceType">
+		<xs:restriction base="xs:unsignedInt">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="12" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PriznakKontextuType">
+		<xs:restriction base="xs:unsignedInt">
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation>historizovat</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation>zachovat</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation>zplatnit</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
+
