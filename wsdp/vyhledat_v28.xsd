@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://katastr.cuzk.cz/vyhledat/types/v2.8"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:bt="http://katastr.cuzk.cz/baseTypes/v2.8"
+	xmlns:ct="http://katastr.cuzk.cz/commonTypes/v2.8"
+	targetNamespace="http://katastr.cuzk.cz/vyhledat/types/v2.8" elementFormDefault="qualified" version="2.8.0">
+
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../xsd/gml.xsd" />
+	<xs:import namespace="http://katastr.cuzk.cz/baseTypes/v2.8" schemaLocation="../../xsd/baseTypes_v28.xsd" />
+	<xs:import namespace="http://katastr.cuzk.cz/commonTypes/v2.8" schemaLocation="../../xsd/commonTypes_v28.xsd" />
+
+	<xs:element name="NajdiParceluRequest" type="NajdiParceluRequestType" />
+	<xs:element name="NajdiParceluResponse" type="NajdiParceluResponseType" />
+
+	<xs:element name="NajdiJednotkuRequest" type="NajdiJednotkuRequestType" />
+	<xs:element name="NajdiJednotkuResponse" type="NajdiJednotkuResponseType" />
+
+	<xs:element name="NajdiStavbuRequest" type="NajdiStavbuRequestType" />
+	<xs:element name="NajdiStavbuResponse" type="NajdiStavbuResponseType" />
+
+	<xs:element name="NajdiOSRequest" type="NajdiOSRequestType" />
+	<xs:element name="NajdiOSResponse" type="NajdiOSResponseType" />
+
+	<xs:element name="NajdiPravoStavbyRequest" type="NajdiPravoStavbyRequestType" />
+	<xs:element name="NajdiPravoStavbyResponse" type="NajdiPravoStavbyResponseType" />
+
+	<xs:element name="NajdiRizeniRequest" type="NajdiRizeniRequestType" />
+	<xs:element name="NajdiRizeniResponse" type="NajdiRizeniResponseType" />
+
+	<xs:element name="NajdiListinuVeSbirceListinRequest" type="NajdiListinuVeSbirceListinRequestType" />
+	<xs:element name="NajdiListinuVeSbirceListinResponse" type="NajdiListinuVeSbirceListinResponseType" />
+
+	<xs:complexType name="NajdiParceluRequestType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ Najdi parcelu </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="parcelaId" type="bt:IdType" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="katastrUzemiKod" type="bt:KatastrUzemiKodType" />
+					<xs:element name="kmenoveCislo" type="bt:ParcelaKmenoveCisloType" />
+					<xs:element name="poddeleni" type="bt:ParcelaPoddeleniType" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude budou vyhledány výsledky.
+						Datum musí být v minulosti. Pokud není datum vyplněn budou
+						data vyhledána v aktuálních datech.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiJednotkuRequestType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ Najdi jednotku </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="jednotkaId" type="bt:IdType" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:choice>
+						<xs:sequence>
+							<xs:element name="stavbaId" type="bt:IdType" />
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="castObceKod" type="bt:CastObceKodType" />
+							<xs:element name="typStavbyKod" type="bt:TypStavbyKodType" />
+							<xs:element name="cisloDomovni" type="bt:CisloDomovniType" />
+						</xs:sequence>
+					</xs:choice>
+					<xs:element name="cisloJednotky" type="bt:JednotkaCisloType" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude budou vyhledány výsledky.
+						Datum musí být v minulosti. Pokud není datum vyplněn budou
+						data vyhledána v aktuálních datech.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiStavbuRequestType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ Najdi stavbu </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="stavbaId" type="bt:IdType" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="castObceKod" type="bt:CastObceKodType" />
+					<xs:element name="typStavbyKod" type="bt:TypStavbyKodType" />
+					<xs:element name="cisloDomovni" type="bt:CisloDomovniType" />
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude budou vyhledány výsledky.
+						Datum musí být v minulosti. Pokud není datum vyplněn budou
+						data vyhledána v aktuálních datech.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiOSRequestType">
+		<xs:annotation>
+			<xs:documentation>Komplexní typ Najdi OS </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Struktura pro vyhledání právnické osoby. Alespoň jeden z parametrů je povinný.</xs:documentation>
+					</xs:annotation>
+					<xs:element name="ico" type="bt:IcoType" minOccurs="0" maxOccurs="1" />
+					<xs:element name="nazev" type="NazevVyhledaniType" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Struktura pro vyhledání fyzických osob a SJM. Povinnosti vyplněných hodnot jsou řešeny aplikační logikou. Pravidla pro vyhledávání je možné najít v uživatelské dokumentaci.</xs:documentation>
+					</xs:annotation>
+					<xs:element name="jmeno" type="JmenoVyhledaniType" minOccurs="0" />
+					<xs:element name="prijmeni" type="PrijmeniVyhledaniType" minOccurs="0" />
+					<xs:choice minOccurs="0">
+						<xs:element name="rc" type="bt:RcKompletniType" />
+						<xs:element name="datumNarozeni" type="xs:date" />
+					</xs:choice>
+					<xs:element name="adresniUdaje" type="AdresniUdajeType"  minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude budou vyhledány výsledky.
+						Datum musí být v minulosti. Pokud není datum vyplněn budou
+						data vyhledána v aktuálních datech.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="OSListType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ pro NajdiOS </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="OS" type="ct:OSType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ParcelaListType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ pro NajdiParcelu </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Parcela" type="ct:ParcelaType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="StavbaListType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ pro NajdiStavbu </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Stavba" type="ct:StavbaType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="JednotkaListType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ pro NajdiJednotku </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Jednotka" type="ct:JednotkaType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiParceluResponseType">
+		<xs:annotation>
+			<xs:documentation> Komplexní odpověď na Najdi parcelu
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="ParcelaList" type="ParcelaListType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiJednotkuResponseType">
+		<xs:annotation>
+			<xs:documentation> Komplexní odpověď na Najdi jednotku
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="JednotkaList" type="JednotkaListType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiStavbuResponseType">
+		<xs:annotation>
+			<xs:documentation> Komplexní odpověď na Najdi stavbu
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="StavbaList" type="StavbaListType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiOSResponseType">
+		<xs:annotation>
+			<xs:documentation> Komplexní odpověď na Najdi OS </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="OSList" type="OSListType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiPravoStavbyRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek pro informace o právu stavby.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="pravoStavbyId" type="bt:IdType" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="parcelaId" type="bt:IdType" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="katastrUzemiKod" type="bt:KatastrUzemiKodType" />
+					<xs:element name="kmenoveCislo" type="bt:ParcelaKmenoveCisloType" />
+					<xs:element name="poddeleni" type="bt:ParcelaPoddeleniType" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude budou vyhledány výsledky.
+						Datum musí být v minulosti. Pokud není datum vyplněn budou
+						data vyhledána v aktuálních datech.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiPravoStavbyResponseType">
+		<xs:annotation>
+			<xs:documentation>Komplexní odpověď operaci vracející informace o
+				Právu stavby.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="PravoStavbyList" type="PravoStavbyListType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PravoStavbyListType">
+		<xs:annotation>
+			<xs:documentation>Komplexní typ pro Právo stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="pravoStavby" type="ct:PravoStavbyType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiRizeniRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na vrácení identifikace cílového řízení
+				podle identifikace pomocného řízení.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="rizeniId" type="bt:IdType" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="rizeniTyp" type="bt:TypRizeniKodType" />
+					<xs:element name="poradoveCislo" type="bt:RizeniPoradoveCisloType" />
+					<xs:element name="rok" type="bt:RizeniRokType" />
+					<xs:element name="praresKod" type="bt:RizeniPraresKodType" />
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiRizeniResponseType">
+		<xs:annotation>
+			<xs:documentation>Odpověď vracející identifikaci cílového řízení
+				podle identifikace pomocného řízení.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="RizeniList" type="RizeniListType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiListinuVeSbirceListinRequestType">
+		<xs:annotation>
+			<xs:documentation>Nalezení listin ze sbírky listin podle řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="rizeniId" type="bt:IdType" />
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="rizeniTyp" type="bt:TypRizeniKodType" />
+					<xs:element name="poradoveCislo" type="bt:RizeniPoradoveCisloType" />
+					<xs:element name="rok" type="bt:RizeniRokType" />
+					<xs:element name="praresKod" type="bt:RizeniPraresKodType" />
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="NajdiListinuVeSbirceListinResponseType">
+		<xs:annotation>
+			<xs:documentation>Odpověď se seznamem listin pro sbírku listin.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="ListinaList" type="ListinaListType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RizeniListType">
+		<xs:annotation>
+			<xs:documentation>Komplexní typ informace o řízení.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="rizeni" type="ct:RizeniType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ListinaListType">
+		<xs:sequence>
+			<xs:element name="listina" type="ct:ListinaType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="NazevVyhledaniType">
+		<xs:annotation>
+			<xs:documentation>Název právnické osoby.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="PrijmeniVyhledaniType">
+		<xs:annotation>
+			<xs:documentation>Příjmení.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="JmenoVyhledaniType">
+		<xs:annotation>
+			<xs:documentation>Jméno.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="AdresniUdajeType">
+		<xs:annotation>
+			<xs:documentation>Struktura pro zadání parametrů adresy pro vyhledání OS.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="obec" type="bt:ObecNazevType" minOccurs="0" />
+			<xs:element name="castObce" type="bt:CastObceNazevType" minOccurs="0" />
+			<xs:element name="ulice" type="bt:UliceNazevType" minOccurs="0" />
+			<xs:element name="cisloOrientacni" type="bt:CisloOrientacniType" minOccurs="0" />
+			<xs:element name="cisloDomovni" type="bt:CisloDomovniType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+

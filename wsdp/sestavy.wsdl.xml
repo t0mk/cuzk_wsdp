@@ -1,0 +1,420 @@
+<definitions
+     targetNamespace="http://katastr.cuzk.cz/sestavy/v2.8"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://katastr.cuzk.cz/sestavy/v2.8"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:stype="http://katastr.cuzk.cz/sestavy/types/v2.8"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+     xmlns:wspol="http://www.w3.org/ns/ws-policy"
+     xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+    >
+	<!-- Verze WSDL: 2.8.0 -->
+	<wsp:Policy wsu:Id="IsknWSMTOMPolicy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<wsoma:OptimizedMimeSerialization
+					xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy name="UsernameToken" wsu:Id="IsknWSSecurityPolicy">
+		<sp:SupportingTokens>
+			<wsp:Policy>
+				<sp:UsernameToken
+					sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+					<wsp:Policy>
+						<sp:WssUsernameToken11 />
+					</wsp:Policy>
+				</sp:UsernameToken>
+			</wsp:Policy>
+		</sp:SupportingTokens>
+	</wsp:Policy> 	
+    <types>
+        <xsd:schema targetNamespace="http://katastr.cuzk.cz/sestavy/types/v2.8" elementFormDefault="qualified">
+            <xsd:include schemaLocation="sestavy_v28.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="generujCenoveUdajeDleNemovitostiRequest">
+        <part name="input" element="stype:GenerujCenoveUdajeDleNemovitostiRequest"/>
+    </message>     
+    <message name="generujCenoveUdajeDleRizeniRequest">
+        <part name="input" element="stype:GenerujCenoveUdajeDleRizeniRequest"/>
+    </message>     
+    <message name="generujCenoveUdajeDleKuRequest">
+        <part name="input" element="stype:GenerujCenoveUdajeDleKuRequest"/>
+    </message>     
+    <message name="generujEvidenciPravProOsobuRequest">
+        <part name="input" element="stype:GenerujEvidenciPravProOsobuRequest"/>
+    </message>     
+    <message name="generujInfoOBodechRequest">
+        <part name="input" element="stype:GenerujInfoOBodechRequest"/>
+    </message>
+    <message name="generujInfoOJednotkachRequest">
+        <part name="input" element="stype:GenerujInfoOJednotkachRequest"/>
+    </message>
+    <message name="generujInfoOParcelachRequest">
+        <part name="input" element="stype:GenerujInfoOParcelachRequest"/>
+    </message>
+    <message name="generujInfoORizeniRequest">
+        <part name="input" element="stype:GenerujInfoORizeniRequest"/>
+    </message>
+    <message name="generujInfoOStavbachRequest">
+        <part name="input" element="stype:GenerujInfoOStavbachRequest"/>
+    </message>
+    <message name="generujLVRequest">
+        <part name="input" element="stype:GenerujLVRequest"/>
+    </message>
+    <message name="generujLVPresOSRequest">
+        <part name="input" element="stype:GenerujLVPresOSRequest"/>
+    </message>
+    <message name="generujLVPresObjektyRequest">
+        <part name="input" element="stype:GenerujLVPresObjektyRequest"/>
+    </message>
+    <message name="generujLVZjednoduseneRequest">
+        <part name="input" element="stype:GenerujLVZjednoduseneRequest"/>
+    </message>
+    <message name="generujMapuRequest">
+        <part name="input" element="stype:GenerujMapuRequest"/>
+    </message>
+    <message name="generujPrehledVlastnictviRequest">
+        <part name="input" element="stype:GenerujPrehledVlastnictviRequest"/>
+    </message>
+    <message name="seznamSestavRequest">
+        <part name="input" element="stype:SeznamSestavRequest"/>
+    </message>
+    <message name="smazSestavuRequest">
+        <part name="input" element="stype:SmazSestavuRequest"/>
+    </message>
+    <message name="vratSestavuRequest">
+        <part name="input" element="stype:VratSestavuRequest"/>
+    </message>
+    <message name="vypisUctuRequest">
+        <part name="input" element="stype:VypisUctuRequest"/>
+    </message>
+    <message name="generujSestavuResponse">
+        <part name="output" element="stype:GenerujSestavuResponse"/>
+    </message>    
+    <message name="generujInfoOPravuStavbyRequest">
+    	<part name="input" element="stype:GenerujInfoOPravuStavbyRequest"></part>
+    </message>
+    <message name="generujInfoOPravuStavbyResponse">
+    	<part name="output" element="stype:GenerujSestavuResponse"></part>
+    </message>
+    <message name="generujVystupZeSbirkyListinRequest">
+    	<part name="input" element="stype:GenerujVystupZeSbirkyListinRequest"></part>
+    </message>
+    <message name="generujVystupZeSbirkyListinResponse">
+    	<part name="output" element="stype:GenerujSestavuResponse"></part>
+    </message>
+    <portType name="sestavy">
+        <operation name="generujCenoveUdajeDleNemovitosti">
+            <input message="tns:generujCenoveUdajeDleNemovitostiRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujCenoveUdajeDleRizeni">
+            <input message="tns:generujCenoveUdajeDleRizeniRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujCenoveUdajeDleKu">
+            <input message="tns:generujCenoveUdajeDleKuRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujEvidenciPravProOsobu">
+            <input message="tns:generujEvidenciPravProOsobuRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujInfoOBodech">
+            <input message="tns:generujInfoOBodechRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujInfoOJednotkach">
+            <input message="tns:generujInfoOJednotkachRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujInfoOParcelach">
+            <input message="tns:generujInfoOParcelachRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujInfoORizeni">
+            <input message="tns:generujInfoORizeniRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujInfoOStavbach">
+            <input message="tns:generujInfoOStavbachRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujLV">
+            <input message="tns:generujLVRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujLVPresOS">
+            <input message="tns:generujLVPresOSRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        
+        <operation name="generujLVPresObjekty">
+            <input message="tns:generujLVPresObjektyRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujLVZjednodusene">
+            <input message="tns:generujLVZjednoduseneRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujMapu">
+            <input message="tns:generujMapuRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujPrehledVlastnictvi">
+        	<input message="tns:generujPrehledVlastnictviRequest"/>
+        	<output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="seznamSestav">
+            <input message="tns:seznamSestavRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="smazSestavu">
+            <input message="tns:smazSestavuRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="vratSestavu">
+            <input message="tns:vratSestavuRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="vypisUctu">
+            <input message="tns:vypisUctuRequest"/>
+            <output message="tns:generujSestavuResponse"/>
+        </operation>
+        <operation name="generujInfoOPravuStavby">
+        	<input message="tns:generujInfoOPravuStavbyRequest"></input>
+        	<output message="tns:generujInfoOPravuStavbyResponse"></output>
+        </operation>
+        <operation name="generujVystupZeSbirkyListin">
+        	<input message="tns:generujVystupZeSbirkyListinRequest"></input>
+        	<output message="tns:generujVystupZeSbirkyListinResponse"></output>
+        </operation>
+    </portType>
+    <binding name="sestavySOAPBinding" type="tns:sestavy">
+        <wsp:PolicyReference URI="#IsknWSMTOMPolicy"/> 
+        <wsp:PolicyReference URI="#IsknWSSecurityPolicy"/>
+        <soap:binding style="document"
+                      transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <operation name="generujCenoveUdajeDleNemovitosti">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujCenoveUdajeDleNemovitosti"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujCenoveUdajeDleRizeni">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujCenoveUdajeDleRizeni"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujCenoveUdajeDleKu">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujCenoveUdajeDleKu"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujEvidenciPravProOsobu">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujEvidenciPravProOsobu"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujInfoOBodech">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujInfoOBodech"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujInfoOJednotkach">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujInfoOJednotkach"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujInfoOParcelach">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujInfoOParcelach"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujInfoORizeni">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujInfoORizeni"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujInfoOStavbach">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujInfoOStavbach"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujInfoOPravuStavby">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujInfoOPravuStavby"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujLV">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujLV"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujLVPresOS">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujLVPresOS"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujLVPresObjekty">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujLVPresObjekty"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujLVZjednodusene">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujLVZjednodusene"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujMapu">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujMapu"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujPrehledVlastnictvi">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujPrehledVlastnictvi"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="generujVystupZeSbirkyListin">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//generujVystupZeSbirkyListin"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="seznamSestav">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//seznamSestav"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="smazSestavu">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//smazSestavu"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="vratSestavu">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//vratSestavu"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="vypisUctu">
+            <soap:operation style="document"
+                            soapAction="http://katastr.cuzk.cz/sestavy//vypisUctu"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="sestavy">
+        <port name="sestavySoapHttpPort" binding="tns:sestavySOAPBinding">
+            <soap:address location="https://katastr.cuzk.cz/ws/wsdp/2.8/sestavy"/>
+        </port>
+    </service>    
+</definitions>

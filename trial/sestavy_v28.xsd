@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://katastr.cuzk.cz/sestavy/types/v2.8"
+	targetNamespace="http://katastr.cuzk.cz/sestavy/types/v2.8"
+	xmlns:bt="http://katastr.cuzk.cz/baseTypes/v2.8"
+	xmlns:ct="http://katastr.cuzk.cz/commonTypes/v2.8"
+	xmlns:xmime="http://www.w3.org/2005/05/xmlmime" elementFormDefault="qualified" version="2.8.0">
+
+	<xs:import namespace="http://katastr.cuzk.cz/baseTypes/v2.8" schemaLocation="../../xsd/baseTypes_v28.xsd"/>
+	<xs:import namespace="http://katastr.cuzk.cz/commonTypes/v2.8" schemaLocation="../../xsd/commonTypes_v28.xsd"/>
+
+	<xs:element name="GenerujCenoveUdajeDleNemovitostiRequest" type="GenerujCenoveUdajeDleNemovitostiRequestType"/>
+	<xs:element name="GenerujCenoveUdajeDleRizeniRequest" type="GenerujCenoveUdajeDleRizeniRequestType"/>
+	<xs:element name="GenerujCenoveUdajeDleKuRequest" type="GenerujCenoveUdajeDleKuRequestType"/>
+	<xs:element name="GenerujEvidenciPravProOsobuRequest" type="GenerujEvidenciPravProOsobuRequestType"/>
+	<xs:element name="GenerujInfoOBodechRequest" type="GenerujInfoOBodechRequestType"/>
+	<xs:element name="GenerujInfoOJednotkachRequest" type="GenerujInfoOJednotkachRequestType"/>
+	<xs:element name="GenerujInfoOParcelachRequest" type="GenerujInfoOParcelachRequestType"/>
+	<xs:element name="GenerujInfoORizeniRequest" type="GenerujInfoORizeniRequestType"/>
+	<xs:element name="GenerujInfoOStavbachRequest" type="GenerujInfoOStavbachRequestType"/>
+	<xs:element name="GenerujLVRequest" type="GenerujLVRequestType"/>
+	<xs:element name="GenerujLVPresOSRequest" type="GenerujLVPresOSRequestType"/>
+	<xs:element name="GenerujLVPresObjektyRequest" type="GenerujLVPresObjektyRequestType"/>
+	<xs:element name="GenerujLVZjednoduseneRequest" type="GenerujLVZjednoduseneRequestType"/>
+	<xs:element name="GenerujMapuRequest" type="GenerujMapuRequestType"/>
+	<xs:element name="GenerujPrehledVlastnictviRequest" type="GenerujPrehledVlastnictviRequestType"/>
+	<xs:element name="SeznamSestavRequest" type="SeznamSestavRequestType"/>
+	<xs:element name="SmazSestavuRequest" type="SmazSestavuRequestType"/>
+	<xs:element name="VratSestavuRequest" type="VratSestavuRequestType"/>
+	<xs:element name="VypisUctuRequest" type="VypisUctuRequestType"/>
+	<xs:element name="GenerujInfoOPravuStavbyRequest" type="GenerujInfoOPravuStavbyRequestType"/>
+	<xs:element name="GenerujVystupZeSbirkyListinRequest" type="GenerujVystupZeSbirkyListinRequestType"/>
+	<xs:element name="GenerujSestavuResponse" type="GenerujSestavuResponseType"/>
+
+	<xs:group name="SestavyBaseType">
+		<xs:annotation>
+			<xs:documentation> Společný základ pro Generuj... dotazy
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="format" type="bt:FormatSestavyType"/>
+			<xs:element name="pripojitXML" type="bt:AnoNeType" minOccurs="0">
+				<xs:annotation>
+<xs:documentation>Příznak, zda vytvořit společně se sestavou i sestavu v XML formátu. Informace o sestavách, které parametry podporují, je možné zjistit v uživatelské dokumentaci WSDP.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice minOccurs="0">
+				<xs:sequence>
+					<xs:element name="cisloJednaci" type="bt:SestavyCisloJednaciType"/>
+					<xs:element name="ucelKod" type="bt:SestavyUcelKodType"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="poradoveCislo" type="bt:SestavyPoradoveCisloType"/>
+					<xs:element name="overovaciDolozka" type="bt:AnoNeType"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:complexType name="GenerujCenoveUdajeDleNemovitostiRequestType">
+		<xs:annotation>
+			<xs:documentation>Informace o cenách nemovitostí podle nemovitostí</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="seznamObjektuTyp" type="bt:TypSeznamuObjektuType"/>
+			<xs:element name="seznamObjektu" type="bt:IdType" maxOccurs="unbounded"/>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována. Datum musí být v
+							minulosti. Pokud není hodnota vyplněna, bude sestava vytvořena z aktuálních
+						dat. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujCenoveUdajeDleRizeniRequestType">
+		<xs:annotation>
+			<xs:documentation>Informace o cenách nemovitostí podle řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="rizeniId" type="bt:IdType"/>
+				<xs:element name="rizeniCislo" type="bt:RizeniCisloType"/>
+			</xs:choice>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujEvidenciPravProOsobuRequestType">
+		<xs:annotation>
+			<xs:documentation> Evidence práv pro osobu </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="typ" type="bt:TypVlastnikaSestavyType"/>
+			<xs:element name="nazev" type="bt:NazevFirmyType"/>
+			<xs:element name="rcIco" type="bt:RcType"/>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="GenerujInfoOBodechRequestType">
+		<xs:annotation>
+			<xs:documentation> Informaci o bodech </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="katastrUzemiKod" type="bt:KatastrUzemiKodType"/>
+				<xs:element name="parcelaId" type="bt:IdType"/>
+				<xs:element name="stavbaId" type="bt:IdType"/>
+				<xs:sequence>
+					<xs:element name="souradniceX" type="bt:MapaSouradniceXType"/>
+					<xs:element name="souradniceY" type="bt:MapaSouradniceYType"/>
+					<xs:element name="vzdalenost" type="bt:MapaVzdalenostType" minOccurs="0"/>
+					<xs:element name="typBodu" type="bt:MapaTypBoduType"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujInfoOJednotkachRequestType">
+		<xs:annotation>
+			<xs:documentation> Informace o jednotkách </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="jednotkaId" type="bt:IdType"/>
+				<xs:sequence>
+					<xs:element name="castObceKod" type="bt:CastObceKodType"/>
+					<xs:element name="typStavbyKod" type="bt:TypStavbyKodType"/>
+					<xs:element name="cisloDomovni" type="bt:CisloDomovniType"/>
+					<xs:element name="cisloJednotky" type="bt:JednotkaCisloType"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujInfoOParcelachRequestType">
+		<xs:annotation>
+			<xs:documentation> Informace o parcelách </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="parcelaId" type="bt:IdType"/>
+				<xs:sequence>
+					<xs:element name="katastrUzemiKod" type="bt:KatastrUzemiKodType"/>
+					<xs:element name="kmenoveCislo" type="bt:ParcelaKmenoveCisloType"/>
+					<xs:element name="poddeleni" type="bt:ParcelaPoddeleniType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujInfoOPravuStavbyRequestType">
+		<xs:annotation>
+			<xs:documentation>Informace o právech stavby</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="pravoStavbyId" type="bt:IdType"/>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujInfoORizeniRequestType">
+		<xs:annotation>
+			<xs:documentation> Informace o řízeních </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="rizeniId" type="bt:IdType"/>
+				<xs:element name="rizeniCislo" type="bt:RizeniCisloType"/>
+			</xs:choice>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujInfoOStavbachRequestType">
+		<xs:annotation>
+			<xs:documentation> Informace o stavbách </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="stavbaId" type="bt:IdType"/>
+				<xs:sequence>
+					<xs:element name="castObceKod" type="bt:CastObceKodType"/>
+					<xs:element name="typStavbyKod" type="bt:TypStavbyKodType"/>
+					<xs:element name="cisloDomovni" type="bt:CisloDomovniType"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujLVRequestType">
+		<xs:annotation>
+			<xs:documentation> Výpis listu vlastnictví </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="lvId" type="bt:IdType"/>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujLVPresOSRequestType">
+		<xs:annotation>
+			<xs:documentation> Výpis listů vlastnictví přes osobu
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="katastrUzemiKod" type="bt:KatastrUzemiKodType"/>
+			<xs:element name="osId" type="bt:IdType"/>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujLVPresObjektyRequestType">
+		<xs:annotation>
+			<xs:documentation> Výpis listů vlastnictví přes objekty
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="seznamuObjektuTyp" type="bt:TypSeznamuObjektuType"/>
+			<xs:element name="seznamObjektu" type="bt:IdObjektuType" maxOccurs="unbounded"/>
+			<xs:element name="castecnyVypis" type="bt:AnoNeType"/>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujLVZjednoduseneRequestType">
+		<xs:annotation>
+			<xs:documentation> Zjednodušený výpis listů vlastnictví
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="katastrUzemiKod" type="bt:KatastrUzemiKodType"/>
+			<xs:element name="lvCislo" type="bt:LVCisloType"/>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujMapuRequestType">
+		<xs:annotation>
+			<xs:documentation> Generování mapy </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="parcelaId" type="bt:IdType"/>
+				<xs:sequence>
+					<xs:element name="souradniceX" type="bt:MapaSouradniceXType"/>
+					<xs:element name="souradniceY" type="bt:MapaSouradniceYType"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:element name="formatPapiru" type="bt:MapaFormatPapiruType"/>
+			<xs:element name="orientaceNaSirku" type="bt:AnoNeType"/>
+			<xs:element name="meritkoMapy" type="bt:MapaMeritkoType"/>
+			<xs:element name="vecnaBremena" type="bt:AnoNeType"/>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujPrehledVlastnictviRequestType">
+		<xs:annotation>
+			<xs:documentation> Výpis přehledu vlastnictví </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="osId" type="bt:IdType"/>
+			<xs:choice minOccurs="0">
+				<xs:element name="krajKod" type="bt:KrajKodType"/>
+				<xs:element name="obecKod" type="bt:ObecKodType"/>
+			</xs:choice>
+			<xs:element name="typPravnihoVztahuKod" type="bt:TypPravnihoVztahuKodType" minOccurs="0"/>
+			<xs:element name="datumK" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Datum, ke kterému bude sestava vygenerována.
+						Datum musí být v minulosti. Pokud není hodnota vyplněna, bude
+						sestava vytvořena z aktuálních dat.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujVystupZeSbirkyListinRequestType">
+		<xs:annotation>
+			<xs:documentation> Generování výstupu ze sbírky listin.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="listinaId" type="bt:IdType" />
+			<xs:choice minOccurs="0">
+				<xs:sequence>
+					<xs:element name="cisloJednaci" type="bt:SestavyCisloJednaciType"/>
+					<xs:element name="ucelKod" type="bt:SestavyUcelKodType"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="poradoveCislo" type="bt:SestavyPoradoveCisloType"/>
+					<xs:element name="overovaciDolozka" type="bt:AnoNeType"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujCenoveUdajeDleKuRequestType">
+		<xs:annotation>
+			<xs:documentation>Informace o cenách nemovitostí v katastrálním území</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="katastrUzemiKod" type="bt:KatastrUzemiKodType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="rok" type="bt:CisloRokuType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Rok za který bude sestaven výstupní soubor. Rok nesmí být větší než aktuální rok.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mesicOd" type="bt:CisloMesiceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Měsíc a rok od kterého (včetně) bude sestaven výstupní soubor. Musí
+						být nižší, než aktuální měsíc a rok.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mesicDo" type="bt:CisloMesiceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Měsíc a rok do kterého (včetně) bude sestaven výstupní soubor. Musí
+						být nižší, než aktuální měsíc a rok a nižší, nebo stejný jako MěsícOd.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="SestavyBaseType"/>
+		</xs:sequence>
+	</xs:complexType> 
+
+	<xs:complexType name="SeznamSestavRequestType">
+		<xs:annotation>
+			<xs:documentation> Seznam sestav daného uživatele </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idSestavy" type="bt:IdType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SmazSestavuRequestType">
+		<xs:annotation>
+			<xs:documentation> Smazání sestavy s daným idem </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idSestavy" type="bt:IdType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="VratSestavuRequestType">
+		<xs:annotation>
+			<xs:documentation> Stažení sestavy s daným idem </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idSestavy" type="bt:IdType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="VypisUctuRequestType">
+		<xs:annotation>
+			<xs:documentation> Výpis účtu uživatele </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="datumOd" type="bt:DatumOdType"/>
+			<xs:element name="datumDo" type="bt:DatumDoType" minOccurs="0"/>
+			<xs:element name="format" type="bt:FormatSestavyType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="GenerujSestavuResponseType">
+		<xs:annotation>
+			<xs:documentation> Univerzální odpověď na požaddavek o vytvoření
+				sestavy - zapouzdření </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType"/>
+			<xs:element name="reportList" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="report" type="ReportType" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ReportType">
+		<xs:annotation>
+			<xs:documentation> Univerzální odpověď na požadavek o vytvoření
+				sestavy </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="bt:IdType"/>
+			<xs:element name="nazev" type="bt:NazevReportuType"/>
+			<xs:element name="pocetJednotek" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Počet měrných jednotek pro určení ceny výstupu. 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pocetStran" type="bt:PocetStranType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Počet stran výstupu.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cena" type="bt:CenaType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						Cena, která je účtována uživateli za stažení.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="datumPozadavku" type="bt:DatumPozadavkuType"/>
+			<xs:element name="datumSpusteni" type="bt:DatumSpusteniType" minOccurs="0"/>
+			<xs:element name="datumVytvoreni" type="bt:DatumVytvoreniType" minOccurs="0"/>
+			<xs:element name="idNadrizeneSestavy" type="bt:IdType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Položka je vyplněna v případě, kdy je sestava přidružená k nějaké sestavě. Například u XML sestavy, které byla vygenerována společně s PDF sestavou.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idPodrizeneSestavy" type="bt:IdType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Položka je vyplněna v případě, kdy má sestava přidruženou nějakou sestavu. Například u PDF sestavy je vrácen identifikátor XML sestavy.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stav" type="bt:ReportStavType"/>
+			<xs:element name="format" type="bt:FormatSestavyType"/>
+			<xs:element name="elZnacka" type="bt:AnoNeType" minOccurs="0"/>
+			<xs:element name="casoveRaziko" type="bt:AnoNeType" minOccurs="0"/>
+			<xs:element name="souborSestavy" type="xs:base64Binary" minOccurs="0" maxOccurs="1" xmime:expectedContentTypes="application/octet-stream"/>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,767 @@
+<wsdl:definitions 
+	targetNamespace="http://katastr.cuzk.cz/ciselnik/v2.8" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://katastr.cuzk.cz/ciselnik/v2.8" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ctype="http://katastr.cuzk.cz/ciselnik/types/v2.8" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+
+	<!-- Verze WSDL: 2.8.0 -->
+
+    <wsp:Policy name="UsernameToken" wsu:Id="IsknWSSecurityPolicy">
+        <sp:SupportingTokens>
+            <wsp:Policy>
+                <sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                    <wsp:Policy>
+                        <sp:WssUsernameToken11/>
+                    </wsp:Policy>
+                </sp:UsernameToken>
+            </wsp:Policy>
+        </sp:SupportingTokens>
+    </wsp:Policy>
+
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://katastr.cuzk.cz/ciselnik/types/v2.8" elementFormDefault="qualified">
+            <xsd:include schemaLocation="ciselnik_v28.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="seznamCiselnikuRequest">
+        <wsdl:part name="input" element="ctype:SeznamCiselnikuRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamCiselnikuResponse">
+        <wsdl:part name="output" element="ctype:SeznamCiselnikuResponse"/>
+    </wsdl:message>
+    
+    <wsdl:message name="seznamStatuRequest">
+        <wsdl:part name="input" element="ctype:SeznamStatuRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamStatuResponse">
+        <wsdl:part name="output" element="ctype:SeznamStatuResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamCastiObciRequest">
+        <wsdl:part name="input" element="ctype:SeznamCastiObciRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamCastiObciResponse">
+        <wsdl:part name="output" element="ctype:SeznamCastiObciResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamCislovaniParcelRequest">
+        <wsdl:part name="input" element="ctype:SeznamCislovaniParcelRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamCislovaniParcelResponse">
+        <wsdl:part name="output" element="ctype:SeznamCislovaniParcelResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamDruhuPozemkuRequest">
+        <wsdl:part name="input" element="ctype:SeznamDruhuPozemkuRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamDruhuPozemkuResponse">
+        <wsdl:part name="output" element="ctype:SeznamDruhuPozemkuResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamHistKURequest">
+        <wsdl:part name="input" element="ctype:SeznamHistKURequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamHistKUResponse">
+        <wsdl:part name="output" element="ctype:SeznamHistKUResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamZpravRequest">
+        <wsdl:part name="input" element="ctype:SeznamZpravRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamZpravResponse">
+        <wsdl:part name="output" element="ctype:SeznamZpravResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamKrajuRequest">
+        <wsdl:part name="input" element="ctype:SeznamKrajuRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamKrajuResponse">
+        <wsdl:part name="output" element="ctype:SeznamKrajuResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamKURequest">
+        <wsdl:part name="input" element="ctype:SeznamKURequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamKUResponse">
+        <wsdl:part name="output" element="ctype:SeznamKUResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamMestskychCastiRequest">
+        <wsdl:part name="input" element="ctype:SeznamMestskychCastiRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamMestskychCastiResponse">
+        <wsdl:part name="output" element="ctype:SeznamMestskychCastiResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamObciRequest">
+        <wsdl:part name="input" element="ctype:SeznamObciRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamObciResponse">
+        <wsdl:part name="output" element="ctype:SeznamObciResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamOkresuRequest">
+        <wsdl:part name="input" element="ctype:SeznamOkresuRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamOkresuResponse">
+        <wsdl:part name="output" element="ctype:SeznamOkresuResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamOperaciRizeniRequest">
+        <wsdl:part name="input" element="ctype:SeznamOperaciRizeniRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamOperaciRizeniResponse">
+        <wsdl:part name="output" element="ctype:SeznamOperaciRizeniResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamPracovistRequest">
+        <wsdl:part name="input" element="ctype:SeznamPracovistRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamPracovistResponse">
+        <wsdl:part name="output" element="ctype:SeznamPracovistResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamPredmetuRizeniRequest">
+        <wsdl:part name="input" element="ctype:SeznamPredmetuRizeniRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamPredmetuRizeniResponse">
+        <wsdl:part name="output" element="ctype:SeznamPredmetuRizeniResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamTypuJednotekRequest">
+        <wsdl:part name="input" element="ctype:SeznamTypuJednotekRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamTypuJednotekResponse">
+        <wsdl:part name="output" element="ctype:SeznamTypuJednotekResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamTypuOperaciRequest">
+        <wsdl:part name="input" element="ctype:SeznamTypuOperaciRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamTypuOperaciResponse">
+        <wsdl:part name="output" element="ctype:SeznamTypuOperaciResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamTypuOSRequest">
+        <wsdl:part name="input" element="ctype:SeznamTypuOSRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamTypuOSResponse">
+        <wsdl:part name="output" element="ctype:SeznamTypuOSResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamTypuParcelRequest">
+        <wsdl:part name="input" element="ctype:SeznamTypuParcelRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamTypuParcelResponse">
+        <wsdl:part name="output" element="ctype:SeznamTypuParcelResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamTypuPravnichVztahuRequest">
+        <wsdl:part name="input" element="ctype:SeznamTypuPravnichVztahuRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamTypuPravnichVztahuResponse">
+        <wsdl:part name="output" element="ctype:SeznamTypuPravnichVztahuResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamTypuRizeniRequest">
+        <wsdl:part name="input" element="ctype:SeznamTypuRizeniRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamTypuRizeniResponse">
+        <wsdl:part name="output" element="ctype:SeznamTypuRizeniResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamUlicRequest">
+        <wsdl:part name="input" element="ctype:SeznamUlicRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamUlicResponse">
+        <wsdl:part name="output" element="ctype:SeznamUlicResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamTypuStavebRequest">
+        <wsdl:part name="input" element="ctype:SeznamTypuStavebRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamTypuStavebResponse">
+        <wsdl:part name="output" element="ctype:SeznamTypuStavebResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamUceluRequest">
+        <wsdl:part name="input" element="ctype:SeznamUceluRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamUceluResponse">
+        <wsdl:part name="output" element="ctype:SeznamUceluResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamUrceniVymeryRequest">
+        <wsdl:part name="input" element="ctype:SeznamUrceniVymeryRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamUrceniVymeryResponse">
+        <wsdl:part name="output" element="ctype:SeznamUrceniVymeryResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamVyuzitiJednotkyRequest">
+        <wsdl:part name="input" element="ctype:SeznamVyuzitiJednotkyRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamVyuzitiJednotkyResponse">
+        <wsdl:part name="output" element="ctype:SeznamVyuzitiJednotkyResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamVyuzitiPozemkuRequest">
+        <wsdl:part name="input" element="ctype:SeznamVyuzitiPozemkuRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamVyuzitiPozemkuResponse">
+        <wsdl:part name="output" element="ctype:SeznamVyuzitiPozemkuResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamVyuzitiStavbyRequest">
+        <wsdl:part name="input" element="ctype:SeznamVyuzitiStavbyRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamVyuzitiStavbyResponse">
+        <wsdl:part name="output" element="ctype:SeznamVyuzitiStavbyResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamZpusobOchranyRequest">
+        <wsdl:part name="input" element="ctype:SeznamZpusobOchranyRequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamZpusobOchranyResponse">
+        <wsdl:part name="output" element="ctype:SeznamZpusobOchranyResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="seznamZdrojuCislovaniZERequest">
+        <wsdl:part name="input" element="ctype:SeznamZdrojuCislovaniZERequest"/>
+    </wsdl:message>
+    <wsdl:message name="seznamZdrojuCislovaniZEResponse">
+        <wsdl:part name="output" element="ctype:SeznamZdrojuCislovaniZEResponse"/>
+    </wsdl:message>
+
+	<wsdl:message name="seznamUceluPSRequest">
+		<wsdl:part name="input" element="ctype:SeznamUceluPSRequest" />
+	</wsdl:message>
+	<wsdl:message name="seznamUceluPSResponse">
+		<wsdl:part name="input" element="ctype:SeznamUceluPSResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="seznamTypParcelyRequest">
+		<wsdl:part name="input" element="ctype:SeznamTypParcelyRequest" />
+	</wsdl:message>
+	<wsdl:message name="seznamTypParcelyResponse">
+		<wsdl:part name="input" element="ctype:SeznamTypParcelyResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="seznamCharakteristikOSRequest">
+		<wsdl:part name="input" element="ctype:SeznamCharakteristikOSRequest" />
+	</wsdl:message>
+	<wsdl:message name="seznamCharakteristikOSResponse">
+		<wsdl:part name="input" element="ctype:SeznamCharakteristikOSResponse" />
+	</wsdl:message>
+
+
+    <wsdl:portType name="ciselnik">
+        <wsdl:operation name="seznamCiselniku">
+            <wsdl:input message="tns:seznamCiselnikuRequest"/>
+            <wsdl:output message="tns:seznamCiselnikuResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamCastiObci">
+            <wsdl:input message="tns:seznamCastiObciRequest"/>
+            <wsdl:output message="tns:seznamCastiObciResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamCislovaniParcel">
+            <wsdl:input message="tns:seznamCislovaniParcelRequest"/>
+            <wsdl:output message="tns:seznamCislovaniParcelResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamDruhuPozemku">
+            <wsdl:input message="tns:seznamDruhuPozemkuRequest"/>
+            <wsdl:output message="tns:seznamDruhuPozemkuResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamHistKU">
+            <wsdl:input message="tns:seznamHistKURequest"/>
+            <wsdl:output message="tns:seznamHistKUResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamZprav">
+            <wsdl:input message="tns:seznamZpravRequest"/>
+            <wsdl:output message="tns:seznamZpravResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamKraju">
+            <wsdl:input message="tns:seznamKrajuRequest"/>
+            <wsdl:output message="tns:seznamKrajuResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamKU">
+            <wsdl:input message="tns:seznamKURequest"/>
+            <wsdl:output message="tns:seznamKUResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamMestskychCasti">
+            <wsdl:input message="tns:seznamMestskychCastiRequest"/>
+            <wsdl:output message="tns:seznamMestskychCastiResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamObci">
+            <wsdl:input message="tns:seznamObciRequest"/>
+            <wsdl:output message="tns:seznamObciResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamOkresu">
+            <wsdl:input message="tns:seznamOkresuRequest"/>
+            <wsdl:output message="tns:seznamOkresuResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamOperaciRizeni">
+            <wsdl:input message="tns:seznamOperaciRizeniRequest"/>
+            <wsdl:output message="tns:seznamOperaciRizeniResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamPracovist">
+            <wsdl:input message="tns:seznamPracovistRequest"/>
+            <wsdl:output message="tns:seznamPracovistResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamPredmetuRizeni">
+            <wsdl:input message="tns:seznamPredmetuRizeniRequest"/>
+            <wsdl:output message="tns:seznamPredmetuRizeniResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamStatu">
+            <wsdl:input message="tns:seznamStatuRequest"/>
+            <wsdl:output message="tns:seznamStatuResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuJednotek">
+            <wsdl:input message="tns:seznamTypuJednotekRequest"/>
+            <wsdl:output message="tns:seznamTypuJednotekResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuOperaci">
+            <wsdl:input message="tns:seznamTypuOperaciRequest"/>
+            <wsdl:output message="tns:seznamTypuOperaciResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuOS">
+            <wsdl:input message="tns:seznamTypuOSRequest"/>
+            <wsdl:output message="tns:seznamTypuOSResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuParcel">
+            <wsdl:input message="tns:seznamTypuParcelRequest"/>
+            <wsdl:output message="tns:seznamTypuParcelResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuPravnichVztahu">
+            <wsdl:input message="tns:seznamTypuPravnichVztahuRequest"/>
+            <wsdl:output message="tns:seznamTypuPravnichVztahuResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuRizeni">
+            <wsdl:input message="tns:seznamTypuRizeniRequest"/>
+            <wsdl:output message="tns:seznamTypuRizeniResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamUlic">
+            <wsdl:input message="tns:seznamUlicRequest"/>
+            <wsdl:output message="tns:seznamUlicResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuStaveb">
+            <wsdl:input message="tns:seznamTypuStavebRequest"/>
+            <wsdl:output message="tns:seznamTypuStavebResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamUcelu">
+            <wsdl:input message="tns:seznamUceluRequest"/>
+            <wsdl:output message="tns:seznamUceluResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamUrceniVymery">
+            <wsdl:input message="tns:seznamUrceniVymeryRequest"/>
+            <wsdl:output message="tns:seznamUrceniVymeryResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamVyuzitiJednotky">
+            <wsdl:input message="tns:seznamVyuzitiJednotkyRequest"/>
+            <wsdl:output message="tns:seznamVyuzitiJednotkyResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamVyuzitiPozemku">
+            <wsdl:input message="tns:seznamVyuzitiPozemkuRequest"/>
+            <wsdl:output message="tns:seznamVyuzitiPozemkuResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamVyuzitiStavby">
+            <wsdl:input message="tns:seznamVyuzitiStavbyRequest"/>
+            <wsdl:output message="tns:seznamVyuzitiStavbyResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamZpusobOchrany">
+            <wsdl:input message="tns:seznamZpusobOchranyRequest"/>
+            <wsdl:output message="tns:seznamZpusobOchranyResponse"/>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamZdrojuCislovaniZE">
+            <wsdl:input message="tns:seznamZdrojuCislovaniZERequest"/>
+            <wsdl:output message="tns:seznamZdrojuCislovaniZEResponse"/>
+        </wsdl:operation>
+
+		<wsdl:operation name="seznamUceluPS">
+            <wsdl:input message="tns:seznamUceluPSRequest"/>
+            <wsdl:output message="tns:seznamUceluPSResponse"/>
+        </wsdl:operation>
+		
+		<wsdl:operation name="seznamTypParcely">
+            <wsdl:input message="tns:seznamTypParcelyRequest"/>
+            <wsdl:output message="tns:seznamTypParcelyResponse"/>
+        </wsdl:operation>
+
+		<wsdl:operation name="seznamCharakteristikOS">
+            <wsdl:input message="tns:seznamCharakteristikOSRequest"/>
+            <wsdl:output message="tns:seznamCharakteristikOSResponse"/>
+        </wsdl:operation>
+
+
+    </wsdl:portType>
+
+    <wsdl:binding name="ciselnikSoapBinding" type="tns:ciselnik">
+        <wsp:PolicyReference URI="#IsknWSSecurityPolicy"/>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        
+        <wsdl:operation name="seznamCiselniku">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamCiselniku"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="seznamCastiObci">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamCastiObci"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamCislovaniParcel">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamCislovaniParcel"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamDruhuPozemku">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamDruhuPozemku"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamHistKU">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamHistKU"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamZprav">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamZprav"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamKraju">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamKraju"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamKU">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamKU"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamMestskychCasti">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamMestskychCasti"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamObci">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamObci"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamOkresu">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamOkresu"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamOperaciRizeni">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamOperaciRizeni"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamPracovist">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamPracovist"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamPredmetuRizeni">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamPredmetuRizeni"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamStatu">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamStatu"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuJednotek">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamTypuJednotek"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuOperaci">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamTypuOperaci"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuOS">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamTypuOS"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuParcel">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamTypuParcel"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuPravnichVztahu">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamTypuPravnichVztahu"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuRizeni">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamTypuRizeni"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamUlic">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamUlic"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamTypuStaveb">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamTypuStaveb"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamUcelu">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamUcelu"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamUrceniVymery">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamUrceniVymery"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamVyuzitiJednotky">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamVyuzitiJednotky"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamVyuzitiPozemku">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamVyuzitiPozemku"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamVyuzitiStavby">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamVyuzitiStavby"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamZpusobOchrany">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamZpusobOchrany"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        
+        <wsdl:operation name="seznamZdrojuCislovaniZE">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamZdrojuCislovaniZE"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+		
+		<wsdl:operation name="seznamUceluPS">
+			<soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamUceluPS"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="seznamTypParcely">
+			<soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamTypParcely"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="seznamCharakteristikOS">
+			<soap:operation style="document" soapAction="http://katastr.cuzk.cz/ciselnik/seznamCharakteristikOS"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="ciselnik">
+        <wsdl:port name="ciselnikSoapHttpPort" binding="tns:ciselnikSoapBinding">
+            <soap:address location="https://wsdptrial.cuzk.cz/trial/ws/wsdp/2.8/ciselnik"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

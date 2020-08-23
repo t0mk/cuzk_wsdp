@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://katastr.cuzk.cz/ucet/types/v2.8"    
+  targetNamespace="http://katastr.cuzk.cz/ucet/types/v2.8" 
+  xmlns:bt="http://katastr.cuzk.cz/baseTypes/v2.8"
+  xmlns:ct="http://katastr.cuzk.cz/commonTypes/v2.8"
+  elementFormDefault="qualified"
+  version="2.8.0"> 
+   
+  <xs:import namespace="http://katastr.cuzk.cz/commonTypes/v2.8" schemaLocation="../../xsd/commonTypes_v28.xsd" />
+              
+  <xs:import namespace="http://katastr.cuzk.cz/baseTypes/v2.8" schemaLocation="../../xsd/baseTypes_v28.xsd" /> 
+              
+  <xs:complexType name="ZmenHesloRequestType">
+    <xs:annotation>
+        <xs:documentation>
+            Komplexní požadavek na změnu hesla
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="noveHeslo" type="bt:HesloType"/>
+    </xs:sequence>   
+  </xs:complexType>
+  
+  <xs:complexType name="ZmenHesloResponseType">
+    <xs:annotation>
+        <xs:documentation>
+            Odpověď na požadavek na změnu hesla uživatele.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="vysledek" type="ct:ResponseInfoType"/>
+    </xs:sequence>    
+  </xs:complexType>
+  
+  <xs:element name="ZmenHesloRequest" type="ZmenHesloRequestType"/>
+  <xs:element name="ZmenHesloResponse" type="ZmenHesloResponseType"/>
+  
+</xs:schema>

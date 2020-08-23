@@ -1,0 +1,1807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://katastr.cuzk.cz/ciselnik/types/v2.8"
+	xmlns:bt="http://katastr.cuzk.cz/baseTypes/v2.8"
+	xmlns:ct="http://katastr.cuzk.cz/commonTypes/v2.8"
+	targetNamespace="http://katastr.cuzk.cz/ciselnik/types/v2.8"
+	elementFormDefault="qualified" version="2.8.0">
+
+
+	<xs:import namespace="http://katastr.cuzk.cz/baseTypes/v2.8" schemaLocation="../../xsd/baseTypes_v28.xsd" />
+	<xs:import namespace="http://katastr.cuzk.cz/commonTypes/v2.8" schemaLocation="../../xsd/commonTypes_v28.xsd" />
+
+	<!-- Elementy -->
+	<xs:element name="SeznamCiselnikuRequest" type="SeznamCiselnikuRequestType" />
+	<xs:element name="SeznamCiselnikuResponse" type="SeznamCiselnikuResponseType" />
+
+	<xs:element name="SeznamCastiObciRequest" type="SeznamCastiObciRequestType" />
+	<xs:element name="SeznamCastiObciResponse" type="SeznamCastiObciResponseType" />
+
+	<xs:element name="SeznamCislovaniParcelRequest" type="SeznamCislovaniParcelRequestType" />
+	<xs:element name="SeznamCislovaniParcelResponse" type="SeznamCislovaniParcelResponseType" />
+
+	<xs:element name="SeznamDruhuPozemkuRequest" type="SeznamDruhuPozemkuRequestType" />
+	<xs:element name="SeznamDruhuPozemkuResponse" type="SeznamDruhuPozemkuResponseType" />
+
+	<xs:element name="SeznamHistKURequest" type="SeznamHistKURequestType" />
+	<xs:element name="SeznamHistKUResponse" type="SeznamHistKUResponseType" />
+
+	<xs:element name="SeznamKrajuRequest" type="SeznamKrajuRequestType" />
+	<xs:element name="SeznamKrajuResponse" type="SeznamKrajuResponseType" />
+
+	<xs:element name="SeznamKURequest" type="SeznamKURequestType" />
+	<xs:element name="SeznamKUResponse" type="SeznamKUResponseType" />
+
+	<xs:element name="SeznamMestskychCastiRequest" type="SeznamMestskychCastiRequestType" />
+	<xs:element name="SeznamMestskychCastiResponse" type="SeznamMestskychCastiResponseType" />
+
+	<xs:element name="SeznamObciRequest" type="SeznamObciRequestType" />
+	<xs:element name="SeznamObciResponse" type="SeznamObciResponseType" />
+
+	<xs:element name="SeznamOkresuRequest" type="SeznamOkresuRequestType" />
+	<xs:element name="SeznamOkresuResponse" type="SeznamOkresuResponseType" />
+
+	<xs:element name="SeznamOperaciRizeniRequest" type="SeznamOperaciRizeniRequestType" />
+	<xs:element name="SeznamOperaciRizeniResponse" type="SeznamOperaciRizeniResponseType" />
+
+	<xs:element name="SeznamPracovistRequest" type="SeznamPracovistRequestType" />
+	<xs:element name="SeznamPracovistResponse" type="SeznamPracovistResponseType" />
+
+	<xs:element name="SeznamPredmetuRizeniRequest" type="SeznamPredmetuRizeniRequestType" />
+	<xs:element name="SeznamPredmetuRizeniResponse" type="SeznamPredmetuRizeniResponseType" />
+
+	<xs:element name="SeznamStatuRequest" type="SeznamStatuRequestType" />
+	<xs:element name="SeznamStatuResponse" type="SeznamStatuResponseType" />
+
+	<xs:element name="SeznamTypuJednotekRequest" type="SeznamTypuJednotekRequestType" />
+	<xs:element name="SeznamTypuJednotekResponse" type="SeznamTypuJednotekResponseType" />
+
+	<xs:element name="SeznamTypuOperaciRequest" type="SeznamTypuOperaciRequestType" />
+	<xs:element name="SeznamTypuOperaciResponse" type="SeznamTypuOperaciResponseType" />
+
+	<xs:element name="SeznamTypuOSRequest" type="SeznamTypuOSRequestType" />
+	<xs:element name="SeznamTypuOSResponse" type="SeznamTypuOSResponseType" />
+
+	<xs:element name="SeznamTypuParcelRequest" type="SeznamTypuParcelRequestType" />
+	<xs:element name="SeznamTypuParcelResponse" type="SeznamTypuParcelResponseType" />
+
+	<xs:element name="SeznamTypuPravnichVztahuRequest" type="SeznamTypuPravnichVztahuRequestType" />
+	<xs:element name="SeznamTypuPravnichVztahuResponse" type="SeznamTypuPravnichVztahuResponseType" />
+
+	<xs:element name="SeznamTypuRizeniRequest" type="SeznamTypuRizeniRequestType" />
+	<xs:element name="SeznamTypuRizeniResponse" type="SeznamTypuRizeniResponseType" />
+
+	<xs:element name="SeznamTypuStavebRequest" type="SeznamTypuStavebRequestType" />
+	<xs:element name="SeznamTypuStavebResponse" type="SeznamTypuStavebResponseType" />
+
+	<xs:element name="SeznamUceluRequest" type="SeznamUceluRequestType" />
+	<xs:element name="SeznamUceluResponse" type="SeznamUceluResponseType" />
+
+	<xs:element name="SeznamUlicRequest" type="SeznamUlicRequestType" />
+	<xs:element name="SeznamUlicResponse" type="SeznamUlicResponseType" />
+
+	<xs:element name="SeznamUrceniVymeryRequest" type="SeznamUrceniVymeryRequestType" />
+	<xs:element name="SeznamUrceniVymeryResponse" type="SeznamUrceniVymeryResponseType" />
+
+	<xs:element name="SeznamVyuzitiJednotkyRequest" type="SeznamVyuzitiJednotkyRequestType" />
+	<xs:element name="SeznamVyuzitiJednotkyResponse" type="SeznamVyuzitiJednotkyResponseType" />
+
+	<xs:element name="SeznamVyuzitiPozemkuRequest" type="SeznamVyuzitiPozemkuRequestType" />
+	<xs:element name="SeznamVyuzitiPozemkuResponse" type="SeznamVyuzitiPozemkuResponseType" />
+
+	<xs:element name="SeznamVyuzitiStavbyRequest" type="SeznamVyuzitiStavbyRequestType" />
+	<xs:element name="SeznamVyuzitiStavbyResponse" type="SeznamVyuzitiStavbyResponseType" />
+
+	<xs:element name="SeznamZpusobOchranyRequest" type="SeznamZpusobOchranyRequestType" />
+	<xs:element name="SeznamZpusobOchranyResponse" type="SeznamZpusobOchranyResponseType" />
+
+	<xs:element name="SeznamZdrojuCislovaniZERequest" type="SeznamZdrojuCislovaniZERequestType" />
+	<xs:element name="SeznamZdrojuCislovaniZEResponse" type="SeznamZdrojuCislovaniZEResponseType" />
+
+	<xs:element name="SeznamZpravRequest" type="SeznamZpravRequestType" />
+	<xs:element name="SeznamZpravResponse" type="SeznamZpravResponseType" />
+
+	<xs:element name="SeznamUceluPSRequest" type="SeznamUceluPSRequestType" />
+	<xs:element name="SeznamUceluPSResponse" type="SeznamUceluPSResponseType" />
+
+	<xs:element name="SeznamTypParcelyRequest" type="SeznamTypParcelyRequestType" />
+	<xs:element name="SeznamTypParcelyResponse" type="SeznamTypParcelyResponseType" />
+
+	<xs:element name="SeznamCharakteristikOSRequest" type="SeznamCharakteristikOSRequestType" />
+	<xs:element name="SeznamCharakteristikOSResponse" type="SeznamCharakteristikOSResponseType" />
+
+	<!-- Typy -->
+
+	<xs:complexType name="SeznamCiselnikuRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam číselníků.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="zmenyOd" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Budou vráceny záznamy změněné po tomto datu
+						včetně.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamStatuRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam států.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="nazevStatu">
+							<xs:annotation>
+								<xs:documentation>Název státu.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:StatNazevType">
+										<xs:annotation>
+											<xs:documentation>Název státu odpovídá výrazu zadanému v
+												hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamKrajuRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam krajů.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamOperaciRizeniRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam operací řízení.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamCislovaniParcelRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam způsobů číslování parcel.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamZdrojuCislovaniZERequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam zdrojů číslování ze
+				zjednodušené evidence
+				parcel.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamDruhuPozemkuRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam druhů pozemku.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamVyuzitiStavbyRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam využití stavby.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamVyuzitiJednotkyRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam využití jednotky.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamVyuzitiPozemkuRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam využití pozemku.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamUrceniVymeryRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam určení výměry.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamZpusobOchranyRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam způsobů ochrany.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuPravnichVztahuRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam typů právních vztahů.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamUceluRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam účelů.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuStavebRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam typů staveb.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuOperaciRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam typů operací.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamPredmetuRizeniRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam předmětů řízení.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuParcelRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam typů parcel.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuJednotekRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam typů jednotek.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuOSRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam typů oprávněných subjektů.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuRizeniRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam typů řízení.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamKURequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam katastrálních území.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="kodObce">
+							<xs:annotation>
+								<xs:documentation>Kód obce do které katastrální území spadá.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:ObecKodType">
+										<xs:annotation>
+											<xs:documentation>Kód obce odpovídá hodnotě.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="kodKU">
+							<xs:annotation>
+								<xs:documentation>Kód katastrálního území.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:KatastrUzemiKodType">
+										<xs:annotation>
+											<xs:documentation>Kód katastrálního území odpovídá hodnotě.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="nazevKU">
+							<xs:annotation>
+								<xs:documentation>Název katastrálního území.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:KatastrUzemiNazevType">
+										<xs:annotation>
+											<xs:documentation>Název katastrálního území odpovídá výrazu
+												zadanému v hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamMestskychCastiRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam městských částí.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="kodObce">
+							<xs:annotation>
+								<xs:documentation>Kód obce do které městská část spadá.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:ObecKodType">
+										<xs:annotation>
+											<xs:documentation>Kód obce odpovídá hodnotě.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="kodMC">
+							<xs:annotation>
+								<xs:documentation>Kód městské části.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:MestskaCastKodType">
+										<xs:annotation>
+											<xs:documentation>Kód městské části odpovídá hodnotě.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="nazevMC">
+							<xs:annotation>
+								<xs:documentation>Název městské části.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:MestskaCastNazevType">
+										<xs:annotation>
+											<xs:documentation>Název městské části odpovídá výrazu
+												zadanému v hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamUlicRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam ulic.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="kodObce">
+							<xs:annotation>
+								<xs:documentation>Kód obce do které ulice spadá.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:ObecKodType">
+										<xs:annotation>
+											<xs:documentation>Kód obce odpovídá hodnotě.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="kodUlice">
+							<xs:annotation>
+								<xs:documentation>Kód ulice.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:UliceKodType">
+										<xs:annotation>
+											<xs:documentation>Kód ulice odpovídá hodnotě.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="nazevUlice">
+							<xs:annotation>
+								<xs:documentation>Název ulice.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:UliceNazevType">
+										<xs:annotation>
+											<xs:documentation>Název ulice odpovídá výrazu zadanému v
+												hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamOkresuRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam okresů.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="kodOkresu">
+							<xs:annotation>
+								<xs:documentation>Kód okresu.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:OkresKodType">
+										<xs:annotation>
+											<xs:documentation>Kód okresu odpovídá.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="nazevOkresu">
+							<xs:annotation>
+								<xs:documentation>Název okresu.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:OkresNazevType">
+										<xs:annotation>
+											<xs:documentation>Název okresu odpovídá výrazu zadanému v
+												hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="kodNovehoKraje">
+							<xs:annotation>
+								<xs:documentation>Kód nového kraje (odpovídá kódu VÚSC).
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:NKrajKodType">
+										<xs:annotation>
+											<xs:documentation>Kód nového kraje odpovídá.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamObciRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam obcí.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="kodObce">
+							<xs:annotation>
+								<xs:documentation>Kód obce.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:ObecKodType">
+										<xs:annotation>
+											<xs:documentation>Kód obce odpovídá.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="nazevObce">
+							<xs:annotation>
+								<xs:documentation>Název obce.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:ObecNazevType">
+										<xs:annotation>
+											<xs:documentation>Název obce odpovídá výrazu zadanému v
+												hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="kodOkresu">
+							<xs:annotation>
+								<xs:documentation>Kód okresu.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:OkresKodType">
+										<xs:annotation>
+											<xs:documentation>Kód okresu odpovídá.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamCastiObciRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam částí obcí.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="kodObce">
+							<xs:annotation>
+								<xs:documentation>Kód obce.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:ObecKodType">
+										<xs:annotation>
+											<xs:documentation>Kód obce odpovídá.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="kodCastiObce">
+							<xs:annotation>
+								<xs:documentation>Kód části obce.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:CastObceKodType">
+										<xs:annotation>
+											<xs:documentation>Kód části obce odpovídá.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="nazevCastiObce">
+							<xs:annotation>
+								<xs:documentation>Název části obce.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:CastObceNazevType">
+										<xs:annotation>
+											<xs:documentation>Název části obce odpovídá výrazu zadanému v
+												hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamPracovistRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam katastrálních pracovišť.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="kodKP">
+							<xs:annotation>
+								<xs:documentation>Kód katastrálního pracovišně.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:PracovisteKodType">
+										<xs:annotation>
+											<xs:documentation>Kód katastrálního pracovišně odpovídá.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="nazevKP">
+							<xs:annotation>
+								<xs:documentation>Název katastrálního pracovišně.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:PracovisteNazevType">
+										<xs:annotation>
+											<xs:documentation>Název katastrálního pracovišně odpovídá
+												výrazu zadanému v hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="email">
+							<xs:annotation>
+								<xs:documentation>Email katastrálního pracovišně.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:EmailType">
+										<xs:annotation>
+											<xs:documentation>Email katastrálního pracovišně odpovídá.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="idDS">
+							<xs:annotation>
+								<xs:documentation>Identifikátor datové schránky katastrálního
+									pracovišně.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:PracovisteDatovaSchrankaType">
+										<xs:annotation>
+											<xs:documentation>Identifikátor datové schránky katastrálního
+												pracovišně odpovídá.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamZpravRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam chyb.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamHistKURequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na historii katastrálních území.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="zmenyOd" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Budou vráceny záznamy změněné po tomto datu
+						včetně.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="kde" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Podmínka.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="kodKU">
+							<xs:annotation>
+								<xs:documentation>Kód katastrálního území.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="odpovida" type="bt:KatastrUzemiKodType">
+										<xs:annotation>
+											<xs:documentation>Kód katastrálního území odpovídá hodnotě.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="nazevKU">
+							<xs:annotation>
+								<xs:documentation>Název katastrálního území.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="obsahuje" type="bt:KatastrUzemiNazevType">
+										<xs:annotation>
+											<xs:documentation>Název katastrálního území odpovídá výrazu
+												zadanému v hodnotě (významově
+												odpovídá SQL LIKE). Jako zástupný znak používejte '%'.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypParcelyRequestType">
+		<xs:annotation>
+			<xs:documentation>Požadavek na seznam typů parcely.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamCiselnikuResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam dostupných číselníků s informací o datu
+				poslední změny
+				číselníku.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="ciselnik" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Číselník.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="nazev" type="bt:CiselnikNazevType">
+							<xs:annotation>
+								<xs:documentation>Název číselníku. Odpovídá názvu operace v
+									rámci
+									WS.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="datumPosledniZmeny" type="xs:date">
+							<xs:annotation>
+								<xs:documentation>Datum poslední změny číselníku.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamStatuResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam států.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="stat" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu států.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:StatKodType" />
+						<xs:element name="nazev" type="bt:StatNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamKrajuResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam krajů.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="kraj" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu krajů.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:KrajKodType" />
+						<xs:element name="nazev" type="bt:KrajNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamOperaciRizeniResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam operací řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="operaceRizeni" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu operací řízení.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:OperaceRizeniKodType" />
+						<xs:element name="nazev" type="bt:OperaceRizeniNazevType" />
+						<xs:element name="stav" type="bt:OperaceRizeniStavType"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamCislovaniParcelResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam způsobů číslování parcel.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="cislovaniParcely" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu způsobů číslování
+							parcel.</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:ZpusobCislovaniParcelyKodType" />
+						<xs:element name="nazev" type="bt:ZpusobCislovaniParcelyNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamZdrojuCislovaniZEResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam zdrojů číslování ZE.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="zdrojCislovaniZE" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu zdrojů číslování ze
+							zjednodušené evidence
+							parcel.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:ZdrojCislovaniZEKodType" />
+						<xs:element name="nazev" type="bt:ZdrojCislovaniZENazevType" />
+						<xs:element name="zkratka" type="bt:ZdrojCislovaniZEZkratkaType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamDruhuPozemkuResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam druhů pozemku.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="druhPozemku" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu druhů pozemku.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:DruhPozemkuKodType" />
+						<xs:element name="nazev" type="bt:DruhPozemkuNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamVyuzitiStavbyResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam způsobů využití stavby.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="vyuzitiStavby" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu způsobů využití
+							stavby.</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:VyuzitiStavbyKodType" />
+						<xs:element name="nazev" type="bt:VyuzitiStavbyNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamVyuzitiJednotkyResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam způsobů využití jednotky.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="vyuzitiJednotky" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu způsobů využití
+							jednotky.</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:VyuzitiJednotkyKodType" />
+						<xs:element name="nazev" type="bt:VyuzitiJednotkyNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamVyuzitiPozemkuResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam způsobů využití pozemku.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="vyuzitiPozemku" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu způsobů využití
+							pozemku.</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:VyuzitiPozemkuKodType" />
+						<xs:element name="nazev" type="bt:VyuzitiPozemkuNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamUrceniVymeryResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam způsobů určení výměry.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="urceniVymery" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu způsobů určení výměry.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:UrceniVymeryKodType" />
+						<xs:element name="nazev" type="bt:UrceniVymeryNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamZpusobOchranyResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam způsobů ochrany.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="zpusobOchrany" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu způsobů ochrany.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:ZpusobOchranyKodType" />
+						<xs:element name="nazev" type="bt:ZpusobOchranyNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuPravnichVztahuResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam typů právních vztahů.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="typPravnihoVztahu" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu typů právních vztahů.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:TypPravnihoVztahuKodType" />
+						<xs:element name="nazev" type="bt:TypPravnihoVztahuNazevType" />
+						<xs:element name="vlastnictvi" type="xs:boolean" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamUceluResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam účelů požadavku.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="ucel" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu účelů požadavku.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:UcelKodType" />
+						<xs:element name="nazev" type="bt:UcelNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuStavebResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam typů staveb.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="typStavby" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu typů staveb.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:TypStavbyKodType" />
+						<xs:element name="nazev" type="bt:TypStavbyNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuOperaciResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam typů operací řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="typOperace" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu typů operací řízení.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:TypOperaceKodType" />
+						<xs:element name="nazev" type="bt:TypOperaceNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamPredmetuRizeniResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam typů předmětů řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="predmetRizeni" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu předmětů řízení.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:PredmetRizeniKodType" />
+						<xs:element name="nazev" type="bt:PredmetRizeniNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuParcelResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam typů parcel.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="typParcely" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu typů parcel. Odpovídá základnímu typy bt:ParcelaTypeType.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:TypParcelyKodType" />
+						<xs:element name="nazev" type="bt:TypParcelyNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuJednotekResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam typů jednotek.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="typJednotky" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu typů jednotek.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:TypJednotkyKodType" />
+						<xs:element name="nazev" type="bt:TypJednotkyNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuOSResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam typů oprávněných subjektů.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="typOS" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu typů oprávněných
+							subjektů.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:TypOSKodType" />
+						<xs:element name="nazev" type="bt:TypOSNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypuRizeniResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam typů řízení.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="typRizeni" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu typů řízení.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:TypRizeniKodType" />
+						<xs:element name="nazev" type="bt:TypRizeniNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamKUResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam katastrálních území.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="katastralniUzemi" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu katastrálních území.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:KatastrUzemiKodType" />
+						<xs:element name="nazev" type="bt:KatastrUzemiNazevType" />
+						<xs:element name="kodObce" type="bt:ObecKodType"
+							minOccurs="0" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamMestskychCastiResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam městských částí.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="mestskaCast" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu městských částí.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:MestskaCastKodType" />
+						<xs:element name="nazev" type="bt:MestskaCastNazevType" />
+						<xs:element name="kodObce" type="bt:ObecKodType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamUlicResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam ulic.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="ulice" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu ulic.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:UliceKodType" />
+						<xs:element name="nazev" type="bt:UliceNazevType" />
+						<xs:element name="kodObce" type="bt:ObecKodType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamOkresuResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam okresů.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="okres" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu okresů.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:OkresKodType" />
+						<xs:element name="nazev" type="bt:OkresNazevType" />
+						<xs:element name="nkrajKod" type="bt:NKrajKodType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamObciResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam obcí.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="obec" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu obcí.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:ObecKodType" />
+						<xs:element name="nazev" type="bt:ObecNazevType" />
+						<xs:element name="okresKod" type="bt:OkresKodType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamCastiObciResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam částí obcí.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="castObce" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu částí obcí.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:CastObceKodType" />
+						<xs:element name="nazev" type="bt:CastObceNazevType" />
+						<xs:element name="obecKod" type="bt:ObecKodType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamPracovistResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam katastrálních pracovišť.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="pracoviste" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu katastrálních
+							pracovišť.</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:PracovisteKodType" />
+						<xs:element name="nazev" type="bt:PracovisteNazevType" />
+						<xs:element name="nkrajKod" type="bt:NKrajKodType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="email" type="bt:EmailType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="datovaSchranka" type="bt:PracovisteDatovaSchrankaType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="nazevUlice" type="bt:UliceNazevType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="cisloDomovni" type="bt:CisloDomovniType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="cisloOrientacni" type="bt:CisloOrientacniType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="psc" type="bt:PSCType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="obec" type="bt:ObecNazevType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="castObce" type="bt:CastObceNazevType" minOccurs="0" maxOccurs="1" />
+						<xs:element name="okres" type="bt:OkresNazevType" minOccurs="0" maxOccurs="1" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamZpravResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam zpráv.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="zprava" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu zpráv.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:ZpravaWSKodType" />
+						<xs:element name="typ" type="bt:ZpravaWSTypType" />
+						<xs:element name="nazev" type="bt:ZpravaWSNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamHistKUResponseType">
+		<xs:annotation>
+			<xs:documentation>Historie katastrálních území.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="katastralniUzemi" minOccurs="0"
+				maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku historie katastrálních území.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:KatastrUzemiKodType" />
+						<xs:element name="nazev" type="bt:KatastrUzemiNazevType" />
+						<xs:element name="obecKod" type="bt:ObecKodType" minOccurs="0" />
+						<xs:element name="platnostOd" type="xs:date" />
+						<xs:element name="platnostDo" type="xs:date" minOccurs="0" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamUceluPSRequestType">
+		<xs:annotation>
+			<xs:documentation>Seznam účelů práva stavby - request.
+			</xs:documentation>
+		</xs:annotation>
+
+	</xs:complexType>
+
+	<xs:complexType name="SeznamUceluPSResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam účelů práva stavby - response.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="ucelPS" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku seznamu účelů práva stavby.
+						</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:UcelPravaStavbyKodType" />
+						<xs:element name="nazev" type="bt:UcelPravaStavbyNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date"
+			use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamTypParcelyResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam států.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="typParcely" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:annotation>
+						<xs:documentation>Položka číselníku typ parcely.</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:element name="kod" type="bt:ParcelaTypType" />
+						<xs:element name="nazev" type="bt:ParcelaTypNazevType" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date" use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamCharakteristikOSRequestType">
+		<xs:annotation>
+			<xs:documentation>Seznam charakteristik oprávněných subjektů - požadavek.</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+
+	<xs:complexType name="SeznamCharakteristikOSResponseType">
+		<xs:annotation>
+			<xs:documentation>Seznam charakteristik oprávněných subjektů - odpověď.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType" />
+			<xs:element name="charakteristikaOS" type="CharakteristikaOSType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="posledniAktualizaceCiselniku" type="xs:date" use="optional">
+			<xs:annotation>
+				<xs:documentation>Datum poslední aktualizace číselníku.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="CharakteristikaOSType">
+		<xs:annotation>
+			<xs:documentation>Položka číselníku charakteristika OS.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="kod" type="bt:CharakteristikaOSKodType" />
+			<xs:element name="nazev" type="xs:string" />
+			<xs:element name="zkratka" type="xs:string" minOccurs="0" />
+			<xs:element name="zkratkaALV" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

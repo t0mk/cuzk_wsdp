@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://katastr.cuzk.cz/informace/types/v2.8"
+	xmlns:ct="http://katastr.cuzk.cz/commonTypes/v2.8" 
+	xmlns:bt="http://katastr.cuzk.cz/baseTypes/v2.8" xmlns:gml="http://www.opengis.net/gml/3.2" 
+	targetNamespace="http://katastr.cuzk.cz/informace/types/v2.8"
+	elementFormDefault="qualified"
+	version="2.8.0">
+
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../xsd/gml.xsd"/>
+	<xs:import namespace="http://katastr.cuzk.cz/baseTypes/v2.8" schemaLocation="../../xsd/baseTypes_v28.xsd"/>
+	<xs:import namespace="http://katastr.cuzk.cz/commonTypes/v2.8" schemaLocation="../../xsd/commonTypes_v28.xsd"/>
+
+	<xs:element name="DejMBRParcelRequest" type="DejMBRParcelRequestType"/>
+	<xs:element name="DejMBRParcelResponse" type="DejMBRParcelResponseType"/>
+	<xs:element name="DejInfoOJednotceRequest" type="DejInfoOJednotceRequestType"/>
+	<xs:element name="DejInfoOJednotceResponse" type="DejInfoOJednotceResponseType"/>
+	<xs:element name="DejNahledLVRequest" type="DejNahledLVRequestType"/>
+	<xs:element name="DejNahledLVResponse" type="DejNahledLVResponseType"/>
+	
+	<xs:complexType name="DejMBRParcelRequestType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ Najdi MBR parcel </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="parcelaId" type="bt:IdType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DejInfoOJednotceRequestType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ - info o jednotce pro CzechPoint </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="idJednotky" type="bt:IdType"/>
+				<xs:sequence>
+					<xs:element name="castObceKod" type="bt:CastObceKodType"/>
+					<xs:element name="stavbaTypKod" type="bt:TypStavbyKodType"/>
+					<xs:element name="stavbaCislo" type="bt:CisloStavbyType"/>
+					<xs:element name="jednotkaCislo" type="bt:JednotkaCisloType"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DejNahledLVRequestType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ - Náhled LV pro CzechPoint </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="katuzeKod" type="bt:KatastrUzemiKodType"/>
+					<xs:element name="lvCislo" type="bt:LVCisloType"/>
+				</xs:sequence>
+				<xs:element name="lvId" type="bt:IdType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="InfoListType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ - odpověď pro NajdiMBRParcelRequest </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MBRList">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MBR" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="IDList">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="ID" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+											</xs:sequence>
+											<xs:attribute name="typ" type="xs:string" fixed="PAR_S"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="gml:boundedBy"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DejMBRParcelResponseType">
+		<xs:annotation>
+			<xs:documentation> Komplexní typ - odpověď pro NajdiMBRParcelRequest </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType"/>
+			<xs:element name="infoList" type="InfoListType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DejInfoOJednotceResponseType">
+	  <xs:annotation>
+			<xs:documentation> Komplexní typ - odpověď pro DejInfoOJednotceRequest </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType"/>
+			<xs:element name="LV" type="LVType" minOccurs="0"/>
+			<xs:element name="jednotka" type="JednotkaLongType" minOccurs="0"/>
+			<xs:element name="stavba" type="ct:StavbaType" minOccurs="0"/>
+			<xs:element name="OS" type="ct:OSType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="vlastnictvi" type="ct:VlastnictviType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DejNahledLVResponseType">
+		<xs:sequence>
+			<xs:element name="vysledek" type="ct:ResponseInfoType"/>
+			<xs:element name="LV" type="LVType" minOccurs="0"/>
+			<xs:element name="OS" type="ct:OSType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="vlastnictvi" type="ct:VlastnictviType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="parcela" type="ct:ParcelaType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="stavba" type="ct:StavbaType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="jednotka" type="JednotkaLongType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="pravoStavby" type="ct:PravoStavbyType" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="JednotkaLongType">
+		<xs:annotation>
+			<xs:documentation> Obecný typ pro jednotku - Rozsireni pro CzechPoint </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="ct:JednotkaType">
+				<xs:sequence>
+					<xs:element name="typNazev" type="bt:JednotkaTypJednotkyNazevType" minOccurs="0"/>
+					<xs:element name="zpuVyNazev" type="bt:JednotkaZpusobVyuzitiNazevType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="LVType">
+		<xs:sequence>
+			<xs:element name="idLV" type="bt:IdType"/>
+			<xs:element name="katastralniUzemi" type="ct:KatuzeType"/>
+			<xs:element name="lvCislo" type="bt:LVCisloType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+</xs:schema>

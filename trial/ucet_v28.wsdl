@@ -1,0 +1,63 @@
+<definitions
+    
+     targetNamespace="http://katastr.cuzk.cz/ucet/v2.8"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://katastr.cuzk.cz/ucet/v2.8"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:utype="http://katastr.cuzk.cz/ucet/types/v2.8"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+     xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+    >
+	<!-- Verze WSDL: 2.8.0 -->
+    <wsp:Policy name="UsernameToken" wsu:Id="IsknWSSecurityPolicy">
+      <sp:SupportingTokens>
+            <wsp:Policy>
+                  <sp:UsernameToken
+                        sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                        <wsp:Policy>
+                             <sp:WssUsernameToken11 />
+                        </wsp:Policy>
+                  </sp:UsernameToken>
+            </wsp:Policy>
+      </sp:SupportingTokens>
+    </wsp:Policy>
+    <types>
+        <xsd:schema targetNamespace="http://katastr.cuzk.cz/ucet/types/v2.8" elementFormDefault="qualified">
+            <xsd:include schemaLocation="ucet_v28.xsd"/>
+        </xsd:schema>
+    </types>
+  <message name="zmenHesloRequest">
+    <part name="input" element="utype:ZmenHesloRequest"/>
+  </message>
+  <message name="zmenHesloResponse">
+    <part name="output" element="utype:ZmenHesloResponse"/>
+  </message>
+  <portType name="ucet">
+    <operation name="zmenHeslo">
+      <input message="tns:zmenHesloRequest"/>
+      <output message="tns:zmenHesloResponse"/>
+    </operation>
+  </portType>
+  <binding name="ucetSOAPBinding" type="tns:ucet">
+    <wsp:PolicyReference URI="#IsknWSSecurityPolicy"/>
+    <soap:binding style="document"
+                  transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="zmenHeslo">
+      <soap:operation style="document"
+                      soapAction="http://katastr.cuzk.cz/ucet/zmenHeslo"/>
+      <input>
+        <soap:body use="literal" parts="input"/>
+      </input>
+      <output>
+        <soap:body use="literal" parts="output"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ucet">
+        <port name="ucetSoapHttpPort" binding="tns:ucetSOAPBinding">
+            <soap:address location="https://wsdptrial.cuzk.cz/trial/ws/wsdp/2.8/ucet"/>
+        </port>
+    </service>    
+</definitions>

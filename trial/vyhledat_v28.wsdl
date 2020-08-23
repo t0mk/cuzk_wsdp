@@ -1,0 +1,176 @@
+<definitions
+     targetNamespace="http://katastr.cuzk.cz/vyhledat/v2.8"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://katastr.cuzk.cz/vyhledat/v2.8"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:vtype="http://katastr.cuzk.cz/vyhledat/types/v2.8"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+     xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+    >
+	<!-- Verze WSDL: 2.8.0 -->
+    <wsp:Policy name="UsernameToken" wsu:Id="IsknWSSecurityPolicy">
+      <sp:SupportingTokens>
+            <wsp:Policy>
+                  <sp:UsernameToken
+                        sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                        <wsp:Policy>
+                             <sp:WssUsernameToken11 />
+                        </wsp:Policy>
+                  </sp:UsernameToken>
+            </wsp:Policy>
+      </sp:SupportingTokens>
+    </wsp:Policy> 
+    <types>
+        <xsd:schema targetNamespace="http://katastr.cuzk.cz/vyhledat/types/v2.8" elementFormDefault="qualified">
+            <xsd:include schemaLocation="vyhledat_v28.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="najdiParceluRequest">
+        <part name="input" element="vtype:NajdiParceluRequest"/>
+    </message>
+    <message name="najdiParceluResponse">
+        <part name="output" element="vtype:NajdiParceluResponse"/>
+    </message>
+    <message name="najdiJednotkuRequest">
+        <part name="input" element="vtype:NajdiJednotkuRequest"/>
+    </message>
+    <message name="najdiJednotkuResponse">
+        <part name="output" element="vtype:NajdiJednotkuResponse"/>
+    </message>
+    <message name="najdiStavbuRequest">
+        <part name="input" element="vtype:NajdiStavbuRequest"/>
+    </message>
+    <message name="najdiStavbuResponse">
+        <part name="output" element="vtype:NajdiStavbuResponse"/>
+    </message>
+    <message name="najdiOSRequest">
+        <part name="input" element="vtype:NajdiOSRequest"/>
+    </message>
+    <message name="najdiOSResponse">
+        <part name="output" element="vtype:NajdiOSResponse"/>
+    </message>
+    <message name="najdiPravoStavbyRequest">
+    	<part name="input" element="vtype:NajdiPravoStavbyRequest" />
+    </message>
+    <message name="najdiPravoStavbyResponse">
+    	<part name="output" element="vtype:NajdiPravoStavbyResponse" />
+    </message>
+    <message name="najdiRizeniRequest">
+    	<part name="input" element="vtype:NajdiRizeniRequest"></part>
+    </message>
+    <message name="najdiRizeniResponse">
+    	<part name="output" element="vtype:NajdiRizeniResponse"></part>
+    </message>
+    <message name="najdiListinuVeSbirceListinRequest">
+    	<part name="input" element="vtype:NajdiListinuVeSbirceListinRequest"></part>
+    </message>
+    <message name="najdiListinuVeSbirceListinResponse">
+    	<part name="output" element="vtype:NajdiListinuVeSbirceListinResponse"></part>
+    </message>
+    <portType name="vyhledat">
+        <operation name="najdiParcelu">
+            <input message="tns:najdiParceluRequest"/>
+            <output message="tns:najdiParceluResponse"/>
+        </operation>
+        <operation name="najdiJednotku">
+            <input message="tns:najdiJednotkuRequest"/>
+            <output message="tns:najdiJednotkuResponse"/>
+        </operation>
+        <operation name="najdiStavbu">
+            <input message="tns:najdiStavbuRequest"/>
+            <output message="tns:najdiStavbuResponse"/>
+        </operation>
+        <operation name="najdiOS">
+            <input message="tns:najdiOSRequest"/>
+            <output message="tns:najdiOSResponse"/>
+        </operation>
+        <operation name="najdiPravoStavby">
+        	<input message="tns:najdiPravoStavbyRequest"></input>
+        	<output message="tns:najdiPravoStavbyResponse"></output>
+        </operation>
+        <operation name="najdiRizeni">
+        	<input message="tns:najdiRizeniRequest"></input>
+        	<output message="tns:najdiRizeniResponse"></output>
+        </operation>
+        <operation name="najdiListinuVeSbirceListin">
+        	<input message="tns:najdiListinuVeSbirceListinRequest"></input>
+        	<output message="tns:najdiListinuVeSbirceListinResponse"></output>
+        </operation>
+    </portType>
+    <binding name="vyhledatSoapBinding" type="tns:vyhledat">
+        <wsp:PolicyReference URI="#IsknWSSecurityPolicy"/>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="najdiParcelu">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/vyhledat//najdiParcelu"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="najdiJednotku">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/vyhledat//najdiJednotku"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="najdiStavbu">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/vyhledat//najdiStavbu"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="najdiOS">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/vyhledat//najdiOS"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="najdiRizeni">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/vyhledat//najdiRizeni"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="najdiPravoStavby">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/vyhledat//najdiPravoStavby"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>        
+        <operation name="najdiListinuVeSbirceListin">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/vyhledat//najdiListinu"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="vyhledat">
+        <port name="vyhledatSoapHttpPort" binding="tns:vyhledatSoapBinding">
+        	<soap:address location="https://wsdptrial.cuzk.cz/trial/ws/wsdp/2.8/vyhledat"/>
+        </port>
+    </service>
+
+</definitions>

@@ -1,0 +1,102 @@
+<definitions
+    
+     targetNamespace="http://katastr.cuzk.cz/informace/v2.8"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://katastr.cuzk.cz/informace/v2.8"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:vtype="http://katastr.cuzk.cz/informace/types/v2.8"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+     xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+    >
+
+	<!-- Verze WSDL: 2.8.0 -->
+
+    <wsp:Policy name="UsernameToken" wsu:Id="IsknWSSecurityPolicy">
+      <sp:SupportingTokens>
+            <wsp:Policy>
+                  <sp:UsernameToken
+                        sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                        <wsp:Policy>
+                             <sp:WssUsernameToken11 />
+                        </wsp:Policy>
+                  </sp:UsernameToken>
+            </wsp:Policy>
+      </sp:SupportingTokens>
+    </wsp:Policy>
+    <types>
+        <xsd:schema targetNamespace="http://katastr.cuzk.cz/informace/types/v2.8" elementFormDefault="qualified">
+            <xsd:include schemaLocation="informace_v28.xsd"/>
+        </xsd:schema>
+    </types>
+
+    <message name="dejMBRParcelRequest">
+        <part name="input" element="vtype:DejMBRParcelRequest"/>
+    </message>
+    <message name="dejMBRParcelResponse">
+        <part name="output" element="vtype:DejMBRParcelResponse"/>
+    </message>
+    <message name="dejInfoOJednotceRequest">
+        <part name="input" element="vtype:DejInfoOJednotceRequest"/>
+    </message>
+    <message name="dejInfoOJednotceResponse">
+        <part name="output" element="vtype:DejInfoOJednotceResponse"/>
+    </message>
+    <message name="dejNahledLVRequest">
+        <part name="input" element="vtype:DejNahledLVRequest"/>
+    </message>
+    <message name="dejNahledLVResponse">
+        <part name="output" element="vtype:DejNahledLVResponse"/>
+    </message>
+    <portType name="informace">        
+        <operation name="dejMBRParcel">
+            <input message="tns:dejMBRParcelRequest"/>
+            <output message="tns:dejMBRParcelResponse"/>
+        </operation>
+        <operation name="dejInfoOJednotce">
+            <input message="tns:dejInfoOJednotceRequest"/>
+            <output message="tns:dejInfoOJednotceResponse"/>
+        </operation>
+        <operation name="dejNahledLV">
+            <input message="tns:dejNahledLVRequest"/>
+            <output message="tns:dejNahledLVResponse"/>
+        </operation>
+    </portType>
+    <binding name="informaceSoapBinding" type="tns:informace">
+        <wsp:PolicyReference URI="#IsknWSSecurityPolicy"/>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>        
+        <operation name="dejMBRParcel">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/informace/dejMBRParcel"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="dejInfoOJednotce">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/informace/dejInfoOJednotce"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+        <operation name="dejNahledLV">
+            <soap:operation style="document" soapAction="http://katastr.cuzk.cz/informace/dejNahledLV"/>
+            <input>
+                <soap:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap:body use="literal" parts="output"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="informace">
+        <port name="informaceSoapHttpPort" binding="tns:informaceSoapBinding">
+            <soap:address location="https://wsdptrial.cuzk.cz/trial/ws/wsdp/2.8/informace"/>
+        </port>
+    </service>
+</definitions>
