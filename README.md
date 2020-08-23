@@ -25,9 +25,11 @@ Cenik: https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-udaju-z-KN/Dalkovy-pr
 z [WSDP_Popis_webovych_sluzeb_pro_uzivatele.pdf](WSDP_Popis_webovych_sluzeb_pro_uzivatele.pdf) strana 42
 
 > 5. Zpoplatnění poskytovaných výstupů
+>
 > Pro zpoplatnění PDF sestav platí stejná pravidla jako v interaktivním DP, včetně specifické odlišnosti pro
 > ověřovací účty. Služby vyhledávaní, správa účtu, číselníky a práce se sestavami jsou poskytovány
 > bezúplatně.
+>
 > Způsob zpoplatnění ve formátu XML je podrobně popsán ve vyhlášce č. 358/2013 Sb., o poskytování údajů
 > z katastru nemovitostí.
 
