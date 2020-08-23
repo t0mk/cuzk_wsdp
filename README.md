@@ -36,6 +36,6 @@ Cenik (asi jen sestav!!!): https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-u
 Z tohoto vyplyva, ze jen "sestavy" jsou zpoplatnene podle toho ceniku (pdf je drazsi nez xml z nejakeho duvodu!?) a vsechny dotazy, co nejsou "sestavy", jsou "bezuplatne", tj. vsechny operace ze "Service:" v souborech:
 
 * [popisy_sluzeb/informace.txt](popisy_sluzeb/informace.txt)
-* [popisy_sluzeb/vyhledavani.txt](popisy_sluzeb/vyhledavani.txt)
+* [popisy_sluzeb/vyhledat.txt](popisy_sluzeb/vyhledat.txt)
 * [popisy_sluzeb/ctios.txt](popisy_sluzeb/ctios.txt)
 
