@@ -80,15 +80,6 @@ def CUZKClient(wsdl):
         settings=settings,
     )
 
-
-def mbrp(pid):
-    c = CUZKClient("informace")
-    resp = c.service.dejMBRParcel(pid)
-    return resp
-
-def op(f, args):
-    return f(**args)
-
 def parArgs(kuk, kc, pd):
     args = {
         "katastrUzemiKod": kuk,
@@ -98,40 +89,43 @@ def parArgs(kuk, kc, pd):
         args['poddeleni'] = pd
     return args
 
+####### OPS
+
+def mbrp(pid):
+    c = CUZKClient("informace")
+    resp = c.service.dejMBRParcel(pid)
+    return resp
+
 def gip(kuk, kc, pd):
     args = parArgs(kuk,kc,pd)
     args['format'] = 'xml'
     return CUZKClient("sestavy").service.generujInfoOParcelach(**args)
 
 def pp(kuk, kc, pd):
-    c = CUZKClient("vyhledat")
-    #print(kuk, kc, pd)
-    args = {
-        "katastrUzemiKod": kuk,
-        "kmenoveCislo": kc,
-    }
-    if pd:
-        args['poddeleni'] = pd
-    resp = c.service.najdiParcelu(**args)
-    return resp
+    args = parArgs(kuk,kc,pd)
+    return CUZKClient("vyhledat").service.najdiParcelu(**args)
 
-    #dom = xml.dom.minidom.parseString(out)
-    #print(dom.toprettyxml())
-    #print(out)
+###### tests
 
 def test_pp():
     for p in PS:
         r = pp(p[0], p[1], p[2])
-        print(r['ParcelaList']['Parcela'][0]['idParcely'])
+        #print(r['ParcelaList']['Parcela'][0]['idParcely'])
+        print(r)
 
 def test_mbrp():
     p = PIDS[3]
     r = mbrp(p)
     print(r)
 
+
+
 if __name__ == "__main__":
-    r = gip(*PS[4])
-    print(r)
-    #test_pp()
+    #r = gip(*PS[4])
+    #print(r)
+    test_pp()
     #test_mbrp()
     
+    #dom = xml.dom.minidom.parseString(out)
+    #print(dom.toprettyxml())
+    #print(out)
