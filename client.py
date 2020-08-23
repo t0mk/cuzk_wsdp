@@ -9,7 +9,9 @@ import sys
 
 TRIAL = True
 
-LVID = 674644306
+LVID = 310
+
+
 KUID = '693936'
 PS = [
     [KUID, '76', '2'],
@@ -70,7 +72,7 @@ def CUZKClient(wsdl):
     creds = None
     if TRIAL:
         relevantWsdls = trialWsdls
-        creds = ["WSTEST", "WSHESLO"]
+        creds = ["WSTESTO", "WSHESLOO"]
     if not creds[0] and not creds[1]:
         print("Nastavte creds ve funkci CUZKClient")
         sys.exit(0)
@@ -106,8 +108,6 @@ def pp(kuk, kc, pd):
     args = parArgs(kuk,kc,pd)
     return CUZKClient("vyhledat").service.najdiParcelu(**args)
 
-def nlv(lvid):
-    return CUZKClient("informace").service.dejNahledLV(lvId=lvid)
 
 ###### tests
 
@@ -122,8 +122,10 @@ def test_mbrp():
     r = mbrp(p)
     print(r)
 
-
-
+clvs = [
+    310, 17, 28, 44, 266, 307, 73, 360, 361, 138, 38, 314, 326, 168, 226, 349, 348, 344,
+    359, 38, 33, 139, 315,
+]
 
 
 if __name__ == "__main__":
@@ -131,7 +133,13 @@ if __name__ == "__main__":
     #print(r)
     #test_pp()
     #test_mbrp()
-    print(nlv(LVID))
+    #for c in clvs:
+    print(CUZKClient("informace").service.dejNahledLV(katuzeKod=KUID, lvCislo=clvs[0]))
+    #print(CUZKClient("sestavy").service.generujLVZjednodusene(
+    #    lvCislo=clvs[0],
+    #    katastrUzemiKod=KUID,
+    #    format='xml',
+    #))
     
     #dom = xml.dom.minidom.parseString(out)
     #print(dom.toprettyxml())
