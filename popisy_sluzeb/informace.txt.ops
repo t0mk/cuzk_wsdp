@@ -1,0 +1,5 @@
+         Operations:
+            dejInfoOJednotce(({idJednotky: ns2:IdType} | {castObceKod: ns2:CastObceKodType, stavbaTypKod: ns2:TypStavbyKodType, stavbaCislo: ns2:CisloStavbyType, jednotkaCislo: ns2:JednotkaCisloType})) -> vysledek: ns3:ResponseInfoType, LV: ns0:LVType, jednotka: ns0:JednotkaLongType, stavba: ns3:StavbaType, OS: ns3:OSType[], vlastnictvi: ns3:VlastnictviType[]
+            dejMBRParcel(parcelaId: ns2:IdType[]) -> vysledek: ns3:ResponseInfoType, infoList: ns0:InfoListType
+            dejNahledLV(({katuzeKod: ns2:KatastrUzemiKodType, lvCislo: ns2:LVCisloType} | {lvId: ns2:IdType})) -> vysledek: ns3:ResponseInfoType, LV: ns0:LVType, OS: ns3:OSType[], vlastnictvi: ns3:VlastnictviType[], parcela: ns3:ParcelaType[], stavba: ns3:StavbaType[], jednotka: ns0:JednotkaLongType[], pravoStavby: ns3:PravoStavbyType[]
+

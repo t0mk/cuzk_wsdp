@@ -1,0 +1,3 @@
+         Operations:
+            ctios(pOSIdent: xsd:string[]) -> vysledek: ns1:ResponseInfoType, osList: ns0:OSListType
+
