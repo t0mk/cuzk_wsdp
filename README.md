@@ -39,3 +39,4 @@ Z tohoto vyplyva, ze jen "sestavy" jsou zpoplatnene podle toho ceniku (pdf je dr
 * [popisy_sluzeb/vyhledat.txt](popisy_sluzeb/vyhledat.txt)
 * [popisy_sluzeb/ctios.txt](popisy_sluzeb/ctios.txt)
 
+.. by mely byt zdarma, oni jen trackuji na co se dotazujes.
