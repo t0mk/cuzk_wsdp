@@ -47,7 +47,7 @@ trialWsdls = {
     "informace": "https://wsdptrial.cuzk.cz/trial/dokumentace/ws28/wsdp/informace_v28.wsdl",
     "sestavy": "https://wsdptrial.cuzk.cz/trial/dokumentace/ws28/wsdp/sestavy_v28.wsdl",
     "ciselnik": "https://wsdptrial.cuzk.cz/trial/dokumentace/ws28/wsdp/ciselnik_v28.wsdl",
-    "ctios": "https://wsdptrial.cuzk.cz/trial/dokumentace/ws28/wsdp/ctios_v28.wsdl",
+    "ctios": "https://wsdptrial.cuzk.cz/trial/dokumentace/ws28/ctios/ctios_v28.wsdl",
     "ucet": "https://wsdptrial.cuzk.cz/trial/dokumentace/ws28/wsdp/ucet_v28.wsdl",
 }
 

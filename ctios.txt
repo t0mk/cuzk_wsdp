@@ -1,0 +1,285 @@
+
+Prefixes:
+     xsd: http://www.w3.org/2001/XMLSchema
+     ns0: http://katastr.cuzk.cz/ctios/types/v2.8
+     ns1: http://katastr.cuzk.cz/commonTypes/v2.8
+     ns2: http://katastr.cuzk.cz/baseTypes/v2.8
+
+Global elements:
+     ns0:CtiOsRequest(ns0:CtiOsRequestType)
+     ns0:CtiOsResponse(ns0:CtiOsResponseType)
+     
+
+Global types:
+     xsd:anyType
+     ns2:AdresaTypType
+     ns2:AnoNeType
+     ns2:CastObceKodType
+     ns2:CastObceNazevType
+     ns2:CenaType
+     ns2:CharakteristikaOSKodType
+     ns2:CiselnikDatumType
+     ns2:CiselnikNazevType
+     ns2:CisloBankUctuType
+     ns2:CisloDomovniType
+     ns2:CisloEvidencniType
+     ns2:CisloJednaciType
+     ns2:CisloMesiceType
+     ns2:CisloOrientacniType
+     ns2:CisloPBPPType
+     ns2:CisloRokuType
+     ns2:CisloStavbyType
+     ns2:CisloZPMZType
+     ns2:CpCeType
+     ns2:DatovaSchrankaIdType
+     ns2:DatumDoType
+     ns2:DatumOdType
+     ns2:DatumPozadavkuType
+     ns2:DatumSpusteniType
+     ns2:DatumVytvoreniType
+     ns2:DicType
+     ns2:DmlOperaceKodType
+     ns2:DmlOperaceNazevType
+     ns2:DokladCisloType
+     ns2:DokladTypType
+     ns2:DoplnekIcoType
+     ns2:DoplnkovyPopisJpvType
+     ns2:DruhCislovaniParType
+     ns2:DruhDMLOperaceType
+     ns2:DruhListinyKodType
+     ns2:DruhPozemkuKodType
+     ns2:DruhPozemkuNazevType
+     ns2:DruhUcastnikaType
+     ns2:EmailType
+     ns2:ExtIdentifikaceRizeniType
+     ns2:FaxTelefonType
+     ns2:FormatSestavyType
+     ns2:HesloType
+     ns2:IcoType
+     ns2:IdObjektuType
+     ns2:IdPrilohyWSType
+     ns2:IdType
+     ns2:JednotkaCisloType
+     ns2:JednotkaTypJednotkyKodType
+     ns2:JednotkaTypJednotkyNazevType
+     ns2:JednotkaZpusobVyuzitiKodType
+     ns2:JednotkaZpusobVyuzitiNazevType
+     ns2:JmenoType
+     ns2:KatastrUzemiKodType
+     ns2:KatastrUzemiNazevType
+     ns2:KategorieKodType
+     ns2:KategorieNazevType
+     ns2:KodAdresnihoMistaType
+     ns2:KodBankyType
+     ns2:KrajKodType
+     ns2:KrajNazevType
+     ns2:LVCisloType
+     ns2:MapaFormatPapiruType
+     ns2:MapaMeritkoType
+     ns2:MapaSouradniceXType
+     ns2:MapaSouradniceYType
+     ns2:MapaTypBoduType
+     ns2:MapaVzdalenostType
+     ns2:MestskaCastKodType
+     ns2:MestskaCastNazevType
+     ns2:MestskyObvodNazevType
+     ns2:NKrajKodType
+     ns2:NazevFirmyType
+     ns2:NazevReportuType
+     ns2:NazevSouboruType
+     ns2:ObecKodType
+     ns2:ObecNazevType
+     ns2:OkresKodType
+     ns2:OkresNazevType
+     ns2:OperaceFunkceKod
+     ns2:OperaceRizeniKodType
+     ns2:OperaceRizeniNazevType
+     ns2:OperaceRizeniStavType
+     ns2:PSCType
+     ns2:ParcelaDilType
+     ns2:ParcelaDruhPozemkuKodType
+     ns2:ParcelaKmenoveCisloType
+     ns2:ParcelaPoddeleniType
+     ns2:ParcelaTypNazevType
+     ns2:ParcelaTypType
+     ns2:ParcelaTypZEType
+     ns2:ParcelaTypeType
+     ns2:ParcelaVymeraType
+     ns2:ParcelaZpusobUrceniVymeryKodType
+     ns2:ParcelaZpusobVyuzitiKodType
+     ns2:PocetStranType
+     ns2:PodobaPoskytnutiType
+     ns2:PoradiTextJpvType
+     ns2:PracovisteDatovaSchrankaType
+     ns2:PracovisteKodType
+     ns2:PracovisteNazevType
+     ns2:PredcisliBankUctuType
+     ns2:PredmetRizeniKodType
+     ns2:PredmetRizeniNazevType
+     ns2:PrijmeniType
+     ns2:PriznakKontextuType
+     ns2:RcKompletniType
+     ns2:RcType
+     ns2:ReportStavType
+     ns2:RizeniCisloPodaniType
+     ns2:RizeniCisloType
+     ns2:RizeniCreateDateType
+     ns2:RizeniPopisType
+     ns2:RizeniPoradoveCisloType
+     ns2:RizeniPraresKodType
+     ns2:RizeniRokType
+     ns2:RizeniUzisysUsernameType
+     ns2:SestavyCisloJednaciType
+     ns2:SestavyMaxCenaType
+     ns2:SestavyPoradoveCisloType
+     ns2:SestavyUcelKodType
+     ns2:StatKodType
+     ns2:StatNazevType
+     ns2:StavDatOSType
+     ns2:StavbaSoucastiType
+     ns2:TextType
+     ns2:TitulPredJmenemType
+     ns2:TitulZaJmenemType
+     ns2:TypBankUctuType
+     ns2:TypJednotkyKodType
+     ns2:TypJednotkyNazevType
+     ns2:TypKompreseType
+     ns2:TypListinyKodType
+     ns2:TypOSKodType
+     ns2:TypOSNazevType
+     ns2:TypOperaceKodType
+     ns2:TypOperaceNazevType
+     ns2:TypParcelyKodType
+     ns2:TypParcelyNazevType
+     ns2:TypPravnihoVztahuKodType
+     ns2:TypPravnihoVztahuNazevType
+     ns2:TypRizeniKodType
+     ns2:TypRizeniNazevType
+     ns2:TypSeznamuObjektuType
+     ns2:TypStavbyKodType
+     ns2:TypStavbyNazevType
+     ns2:TypUcastnikaKodType
+     ns2:TypVlastnikaSestavyType
+     ns2:TypVlastnikaType
+     ns2:UcelKodType
+     ns2:UcelNazevType
+     ns2:UcelPravaStavbyKodType
+     ns2:UcelPravaStavbyNazevType
+     ns2:UdalostiIdOdType
+     ns2:UdalostiMaxPolozekType
+     ns2:UliceKodType
+     ns2:UliceNazevType
+     ns2:UrceniVymeryKodType
+     ns2:UrceniVymeryNazevType
+     ns2:VlastnictviPodilCitatelType
+     ns2:VlastnictviPodilJmenovatelType
+     ns2:VyuzitiJednotkyKodType
+     ns2:VyuzitiJednotkyNazevType
+     ns2:VyuzitiPozemkuKodType
+     ns2:VyuzitiPozemkuNazevType
+     ns2:VyuzitiStavbyKodType
+     ns2:VyuzitiStavbyNazevType
+     ns2:ZdrojCislovaniZEKodType
+     ns2:ZdrojCislovaniZENazevType
+     ns2:ZdrojCislovaniZEZkratkaType
+     ns2:ZpravaServeruTypeType
+     ns2:ZpravaWSKodType
+     ns2:ZpravaWSNazevType
+     ns2:ZpravaWSTypType
+     ns2:ZpusobCislovaniParcelyKodType
+     ns2:ZpusobCislovaniParcelyNazevType
+     ns2:ZpusobOchranyKodType
+     ns2:ZpusobOchranyNazevType
+     ns2:ZpusobUhradyType
+     ns2:ZpusobVyuzitiStavbyType
+     ns2:uuidType
+     ns1:BankovniSpojeniType(predcisli: ns2:PredcisliBankUctuType, cisloUctu: ns2:CisloBankUctuType, kodBanky: ns2:KodBankyType, typUctu: ns2:TypBankUctuType)
+     ns1:CastObceType(kod: ns2:CastObceKodType, nazev: ns2:CastObceNazevType)
+     ns1:IdJednotkyListType(idJednotky: ns2:IdType[])
+     ns1:IdParcelyListType(idParcely: ns2:IdType[])
+     ns1:IdPravaStavbyListType(idPravaStavby: ns2:IdType[])
+     ns1:IdStavbyListType(idStavby: ns2:IdType[])
+     ns1:JednotkaIdentType(idJednotky: ns2:IdType, lvId: ns2:IdType, cislo: ns2:JednotkaCisloType, stavba: ns1:StavbaIdentType)
+     ns1:JednotkaType(idJednotky: ns2:IdType, stavba: ns1:StavbaIdentType, typJedKod: ns2:JednotkaTypJednotkyKodType, cislo: ns2:JednotkaCisloType, zpuVyKod: ns2:JednotkaZpusobVyuzitiKodType, lvId: ns2:IdType)
+     ns1:KatastralniUzemiListType(ku: ns1:KatuzeType[])
+     ns1:KatuzeKodListType(katuzeKod: ns2:KatastrUzemiKodType[])
+     ns1:KatuzeType(kod: ns2:KatastrUzemiKodType, nazev: ns2:KatastrUzemiNazevType)
+     ns1:ListinaType(listinaId: ns2:IdType, oznaceniListiny: xsd:string, datumVyhotoveni: xsd:dateTime)
+     ns1:OSBaseType(idOS: ns2:IdType, nazev: ns2:NazevFirmyType, ico: ns2:IcoType, doplnekIco: ns2:DoplnekIcoType, prijmeni: ns2:PrijmeniType, jmeno: ns2:JmenoType, titulPred: ns2:TitulPredJmenemType, titulZa: ns2:TitulZaJmenemType, rcZkracene: ns2:RcType, ulice: ns2:UliceNazevType, cisloDomovni: ns2:CisloDomovniType, cisloOrientacni: ns2:CisloOrientacniType, castObceNazev: ns2:CastObceNazevType, obecNazev: ns2:ObecNazevType, mestskaCastNazev: ns2:MestskaCastNazevType, mestskyObvodNazev: ns2:MestskyObvodNazevType, psc: ns2:PSCType, vlastnikTyp: ns2:TypVlastnikaType, typCpCe: ns2:CpCeType, statNazev: ns2:StatNazevType, okresNazev: ns2:OkresNazevType, charOSType: ns2:CharakteristikaOSKodType)
+     ns1:OSType(idOS: ns2:IdType, nazev: ns2:NazevFirmyType, ico: ns2:IcoType, doplnekIco: ns2:DoplnekIcoType, prijmeni: ns2:PrijmeniType, jmeno: ns2:JmenoType, titulPred: ns2:TitulPredJmenemType, titulZa: ns2:TitulZaJmenemType, rcZkracene: ns2:RcType, ulice: ns2:UliceNazevType, cisloDomovni: ns2:CisloDomovniType, cisloOrientacni: ns2:CisloOrientacniType, castObceNazev: ns2:CastObceNazevType, obecNazev: ns2:ObecNazevType, mestskaCastNazev: ns2:MestskaCastNazevType, mestskyObvodNazev: ns2:MestskyObvodNazevType, psc: ns2:PSCType, vlastnikTyp: ns2:TypVlastnikaType, typCpCe: ns2:CpCeType, statNazev: ns2:StatNazevType, okresNazev: ns2:OkresNazevType, charOSType: ns2:CharakteristikaOSKodType, partner1: ns1:PartnerType, partner2: ns1:PartnerType)
+     ns1:ParcelaIdentType(idParcely: ns2:IdType, lvId: ns2:IdType, katuzeKod: ns2:KatastrUzemiKodType, kmenoveCislo: ns2:ParcelaKmenoveCisloType, parcelaType: ns2:ParcelaTypeType, druhCislovaniPar: ns2:DruhCislovaniParType, poddeleniCisla: ns2:ParcelaPoddeleniType, katuzePuv: ns2:KatastrUzemiKodType, typZE: ns2:ParcelaTypZEType, dil: ns2:ParcelaDilType)
+     ns1:ParcelaType(idParcely: ns2:IdType, parcelaType: ns2:ParcelaTypeType, katuzeKod: ns2:KatastrUzemiKodType, katuzePuv: ns2:KatastrUzemiKodType, kmenoveCislo: ns2:ParcelaKmenoveCisloType, poddeleniCisla: ns2:ParcelaPoddeleniType, dil: ns2:ParcelaDilType, zpUrVyKod: ns2:ParcelaZpusobUrceniVymeryKodType, typZE: ns2:ParcelaTypZEType, drupozKod: ns2:ParcelaDruhPozemkuKodType, zpuvypaKod: ns2:ParcelaZpusobVyuzitiKodType, typ: ns2:ParcelaTypType, vymera: ns2:ParcelaVymeraType, lvId: ns2:IdType, druhCislovaniPar: ns2:DruhCislovaniParType, stavba: ns1:StavbaIdentType, stavbaSoucastiParcely: ns2:AnoNeType, pravoStavby: ns1:PravoStavbyIdentType)
+     ns1:ParcelyList(parcela: ns1:ParcelaIdentType[])
+     ns1:PartnerType(OS: ns1:OSBaseType)
+     ns1:PravoStavbyIdentType(idPravoStavby: ns2:IdType, lvId: ns2:IdType, parcelaIdentifikacni: ns1:ParcelaIdentType)
+     ns1:PravoStavbyType(idPravoStavby: ns2:IdType, datumKoncePlatnosti: xsd:date, lvId: ns2:IdType, ucelPravaStavbyList: ns1:UcelPravaStavbyListType, pouzeIdentParcela: ns2:AnoNeType, parcely: ns1:ParcelyList)
+     ns1:PrilohaWSType(idPrilohy: ns2:IdPrilohyWSType, jmenoSouboru: ns2:NazevSouboruType)
+     ns1:ResponseInfoType(zprava: ns1:ZpravaServeruType[])
+     ns1:RizeniPomocneType(idRizeni: ns2:IdType, cisloPodani: ns2:RizeniCisloPodaniType, createDate: ns2:RizeniCreateDateType, praresKod: ns2:RizeniPraresKodType, rizeniTyp: ns2:TypRizeniKodType, poradoveCislo: ns2:RizeniPoradoveCisloType, rok: ns2:RizeniRokType, noveRizeniId: ns2:IdType)
+     ns1:RizeniType(idRizeni: ns2:IdType, praresKod: ns2:RizeniPraresKodType, rizeniTyp: ns2:TypRizeniKodType, poradoveCislo: ns2:RizeniPoradoveCisloType, rok: ns2:RizeniRokType, extIdentifikace: ns2:ExtIdentifikaceRizeniType)
+     ns1:StavbaIdentType(idStavby: ns2:IdType, lvId: ns2:IdType, typStavbyKod: ns2:TypStavbyKodType, ({castObceKod: ns2:CastObceKodType, cisloDomovni: ns2:CisloDomovniType} | {parcelaIdentifikacni: ns1:ParcelaIdentType}))
+     ns1:StavbaType(idStavby: ns2:IdType, stavbaTypKod: ns2:TypStavbyKodType, castObce: ns1:CastObceType, cisloDomovni: ns2:CisloDomovniType, zpuVyKod: ns2:ZpusobVyuzitiStavbyType, parcelaIdentifikacni: ns1:ParcelaIdentType, lvId: ns2:IdType, jeSoucasti: ns2:StavbaSoucastiType, pravoStavby: ns1:PravoStavbyIdentType, docasnaStavba: ns2:AnoNeType)
+     ns1:UcelPravaStavbyListType(ucelPravaStavby: ns1:UcelPravaStavbyType[])
+     ns1:UcelPravaStavbyType(kod: ns2:UcelPravaStavbyKodType, nazev: ns2:UcelPravaStavbyNazevType)
+     ns1:VlastnictviType(idVlastnictvi: ns2:IdType, lvId: ns2:IdType, podilCitatel: ns2:VlastnictviPodilCitatelType, podilJmenovatel: ns2:VlastnictviPodilJmenovatelType, typPravnihoVztahuKod: ns2:TypPravnihoVztahuKodType, katuzeKod: ns2:KatastrUzemiKodType, lvCislo: ns2:LVCisloType, ({osId: ns2:IdType} | {parcelaId: ns2:IdType} | {budovaId: ns2:IdType} | {jednotkaId: ns2:IdType} | {pravoStavbyId: ns2:IdType}))
+     ns1:ZpravaServeruType(ns2:TextType, kod: xsd:nonNegativeInteger, uroven: ns2:ZpravaServeruTypeType)
+     ns0:ChybaPOSIdentType
+     ns0:CtiOsRequestType(pOSIdent: xsd:string[])
+     ns0:CtiOsResponseType(vysledek: ns1:ResponseInfoType, osList: ns0:OSListType)
+     ns0:OSDetailType(stavDat: ns2:StavDatOSType, datumVzniku: xsd:dateTime, datumZaniku: xsd:dateTime, priznakKontext: ns2:PriznakKontextuType, rizeniIdVzniku: ns2:IdType, rizeniIdZaniku: ns2:IdType, partnerBsm1: ns2:IdType, partnerBsm2: ns2:IdType, idZdroj: ns2:IdType, opsubType: ns2:TypVlastnikaType, charOsType: ns2:CharakteristikaOSKodType, ico: ns2:IcoType, doplnekIco: ns2:DoplnekIcoType, nazev: ns2:NazevFirmyType, nazevU: ns2:NazevFirmyType, rodneCislo: ns2:RcType, titulPredJmenem: ns2:TitulPredJmenemType, jmeno: ns2:JmenoType, jmenoU: ns2:JmenoType, prijmeni: ns2:PrijmeniType, prijmeniU: ns2:PrijmeniType, titulZaJmenem: ns2:TitulZaJmenemType, cisloDomovni: ns2:CisloDomovniType, cisloOrientacni: ns2:CisloOrientacniType, nazevUlice: ns2:UliceNazevType, castObce: ns2:CastObceNazevType, obec: ns2:ObecNazevType, okres: ns2:OkresNazevType, stat: ns2:StatNazevType, psc: ns2:PSCType, mestskaCast: ns2:MestskaCastNazevType, cpCe: ns2:CpCeType, datumVzniku2: xsd:dateTime, rizeniIdVzniku2: ns2:IdType, kodAdresnihoMista: ns2:KodAdresnihoMistaType, idNadrizenePravnickeOsoby: ns2:IdType)
+     ns0:OSListType(os: ns0:OSType[])
+     ns0:OSType(pOSIdent: xsd:string, ({chybaPOSIdent: ns0:ChybaPOSIdentType} | {osId: ns2:IdType, osDetail: ns0:OSDetailType[]}))
+     xsd:ENTITIES
+     xsd:ENTITY
+     xsd:ID
+     xsd:IDREF
+     xsd:IDREFS
+     xsd:NCName
+     xsd:NMTOKEN
+     xsd:NMTOKENS
+     xsd:NOTATION
+     xsd:Name
+     xsd:QName
+     xsd:anySimpleType
+     xsd:anyURI
+     xsd:base64Binary
+     xsd:boolean
+     xsd:byte
+     xsd:date
+     xsd:dateTime
+     xsd:decimal
+     xsd:double
+     xsd:duration
+     xsd:float
+     xsd:gDay
+     xsd:gMonth
+     xsd:gMonthDay
+     xsd:gYear
+     xsd:gYearMonth
+     xsd:hexBinary
+     xsd:int
+     xsd:integer
+     xsd:language
+     xsd:long
+     xsd:negativeInteger
+     xsd:nonNegativeInteger
+     xsd:nonPositiveInteger
+     xsd:normalizedString
+     xsd:positiveInteger
+     xsd:short
+     xsd:string
+     xsd:time
+     xsd:token
+     xsd:unsignedByte
+     xsd:unsignedInt
+     xsd:unsignedLong
+     xsd:unsignedShort
+
+Bindings:
+     Soap11Binding: {http://katastr.cuzk.cz/ctios/v2.8}ctiosSOAPBinding
+
+Service: ctios
+     Port: ctiosSoapHttpPort (Soap11Binding: {http://katastr.cuzk.cz/ctios/v2.8}ctiosSOAPBinding)
+         Operations:
+            ctios(pOSIdent: xsd:string[]) -> vysledek: ns1:ResponseInfoType, osList: ns0:OSListType
+
