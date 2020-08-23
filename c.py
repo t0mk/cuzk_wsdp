@@ -3,8 +3,7 @@
 import requests
 
 
-data = """
-<soapenv:Envelope
+data = """<soapenv:Envelope
 xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
 xmlns:typ="http://katastr.cuzk.cz/vyhledat/types/v2.8">
 <soapenv:Header>
@@ -33,8 +32,8 @@ username-token-profile-1.0#PasswordText">WSHESLO</wsse:Password>
 """
 
 
-u2 =  "https://wsdptrial.cuzk.cz/trial/ws/wsdp/2.8/sestavy"
-url = "https://wsdptrial.cuzk.cz/trial/ws/wsdp/2.8/sestavy"
+#us =  "https://wsdptrial.cuzk.cz/trial/ws/wsdp/2.8/sestavy"
+url = "https://wsdptrial.cuzk.cz/trial/ws/wsdp/2.8/vyhledat"
 
 r = requests.post(url, data=data)
 
