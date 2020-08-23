@@ -6,6 +6,8 @@ https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-udaju-z-KN/Dalkovy-pristup.a
 kod pouziva endpointy "na zkousku":
 https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-udaju-z-KN/Dalkovy-pristup/Webove-sluzby-DP-na-zkousku.aspx
 
+V addr popisy_sluzeb jsou vygenerovane dokumentace k jednotlivym WSDP. Nejzajimavejsi v tech souborech je klic "Service", kde jsou vyjmenovane operace s typy pro vstup a vystup.
+
 ## generovat info o webove sluzbe z WSDL
 
 `python3 -m zeep https://wsdptrial.cuzk.cz/trial/dokumentace/ws28/wsdp/sestavy_v28.wsdl > sestavy.txt`
