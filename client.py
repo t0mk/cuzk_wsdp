@@ -9,6 +9,7 @@ import sys
 
 TRIAL = True
 
+LVID = 674644306
 KUID = '693936'
 PS = [
     [KUID, '76', '2'],
@@ -105,6 +106,9 @@ def pp(kuk, kc, pd):
     args = parArgs(kuk,kc,pd)
     return CUZKClient("vyhledat").service.najdiParcelu(**args)
 
+def nlv(lvid):
+    return CUZKClient("informace").service.dejNahledLV(lvId=lvid)
+
 ###### tests
 
 def test_pp():
@@ -120,11 +124,14 @@ def test_mbrp():
 
 
 
+
+
 if __name__ == "__main__":
     #r = gip(*PS[4])
     #print(r)
-    test_pp()
+    #test_pp()
     #test_mbrp()
+    print(nlv(LVID))
     
     #dom = xml.dom.minidom.parseString(out)
     #print(dom.toprettyxml())
