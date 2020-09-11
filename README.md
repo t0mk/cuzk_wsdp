@@ -31,7 +31,11 @@ z [WSDP_Popis_webovych_sluzeb_pro_uzivatele.pdf](WSDP_Popis_webovych_sluzeb_pro_
 
 Vyhlaska 358/2013 Sb.: https://www.zakonyprolidi.cz/cs/2013-358
 
-Cenik (asi jen sestav!!!): https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-udaju-z-KN/Dalkovy-pristup/Uctovani-vystupu-z-KN-poskytovanych-DP-A-WSDP.aspx
+Katastralni zakon: https://www.zakonyprolidi.cz/cs/2013-256 
+
+Souhrn Katastralniho zakona: https://cs.wikipedia.org/wiki/Katastr_nemovitostí_České_republiky#Katastrální_zákon
+
+Cenik: https://www.cuzk.cz/Katastr-nemovitosti/Poskytovani-udaju-z-KN/Dalkovy-pristup/Uctovani-vystupu-z-KN-poskytovanych-DP-A-WSDP.aspx
 
 Z tohoto vyplyva, ze jen "sestavy" jsou zpoplatnene podle toho ceniku (pdf je drazsi nez xml z nejakeho duvodu!?) a vsechny dotazy, co nejsou "sestavy", jsou "bezuplatne", tj. vsechny operace v souborech:
 
@@ -39,7 +43,7 @@ Z tohoto vyplyva, ze jen "sestavy" jsou zpoplatnene podle toho ceniku (pdf je dr
 * [popisy_sluzeb/vyhledat.txt.ops](popisy_sluzeb/vyhledat.txt.ops)
 * [popisy_sluzeb/ctios.txt.ops](popisy_sluzeb/ctios.txt.ops)
 
-.. by mely byt zdarma, oni jen trackuji na co se dotazujes.
+.. by mely byt zdarma. Krome `dejNahledLV`, ktera je pristupna jen urednikum (ne platicim zakaznikum).
 
 ## Priklad vystupu
 
