@@ -55,132 +55,132 @@ print(CUZKClient("informace").service.dejNahledLV(katuzeKod=KUID, lvCislo=310))
 
 ```json
 {
-    'vysledek': {
-        'zprava': [
+    "vysledek": {
+        "zprava": [
             {
-                '_value_1': 'Požadovaná akce byla úspěšně provedena.',
-                'kod': 0,
-                'uroven': 'INFORMACE'
+                "_value_1": "Požadovaná akce byla úspěšně provedena.",
+                "kod": 0,
+                "uroven": "INFORMACE"
             }
         ]
     },
-    'LV': {
-        'idLV': 674691306,
-        'katastralniUzemi': {
-            'kod': 693936,
-            'nazev': 'Jáma'
+    "LV": {
+        "idLV": 674691306,
+        "katastralniUzemi": {
+            "kod": 693936,
+            "nazev": "Jáma"
         },
-        'lvCislo': 310
+        "lvCislo": 310
     },
-    'OS': [
+    "OS": [
         {
-            'idOS': 421450302,
-            'nazev': None,
-            'ico': None,
-            'doplnekIco': None,
-            'prijmeni': 'Fus',
-            'jmeno': 'Karel',
-            'titulPred': None,
-            'titulZa': None,
-            'rcZkracene': '980419',
-            'ulice': None,
-            'cisloDomovni': 129,
-            'cisloOrientacni': None,
-            'castObceNazev': 'Odry',
-            'obecNazev': 'Odry',
-            'mestskaCastNazev': None,
-            'mestskyObvodNazev': None,
-            'psc': 11000,
-            'vlastnikTyp': 'OFO',
-            'typCpCe': '1',
-            'statNazev': None,
-            'okresNazev': None,
-            'charOSType': 2,
-            'partner1': None,
-            'partner2': None
+            "idOS": 421450302,
+            "nazev": None,
+            "ico": None,
+            "doplnekIco": None,
+            "prijmeni": "Fus",
+            "jmeno": "Karel",
+            "titulPred": None,
+            "titulZa": None,
+            "rcZkracene": "980419",
+            "ulice": None,
+            "cisloDomovni": 129,
+            "cisloOrientacni": None,
+            "castObceNazev": "Odry",
+            "obecNazev": "Odry",
+            "mestskaCastNazev": None,
+            "mestskyObvodNazev": None,
+            "psc": 11000,
+            "vlastnikTyp": "OFO",
+            "typCpCe": "1",
+            "statNazev": None,
+            "okresNazev": None,
+            "charOSType": 2,
+            "partner1": None,
+            "partner2": None
         },
         {
-            'idOS': 414306306,
-            'nazev': None,
-            'ico': None,
-            'doplnekIco': None,
-            'prijmeni': 'Fus',
-            'jmeno': 'Karel',
-            'titulPred': None,
-            'titulZa': None,
-            'rcZkracene': '970419',
-            'ulice': None,
-            'cisloDomovni': 5,
-            'cisloOrientacni': None,
-            'castObceNazev': 'Hošťálkovy',
-            'obecNazev': 'Hošťálkovy',
-            'mestskaCastNazev': None,
-            'mestskyObvodNazev': None,
-            'psc': 11000,
-            'vlastnikTyp': 'OFO',
-            'typCpCe': '1',
-            'statNazev': None,
-            'okresNazev': None,
-            'charOSType': 2,
-            'partner1': None,
-            'partner2': None
+            "idOS": 414306306,
+            "nazev": None,
+            "ico": None,
+            "doplnekIco": None,
+            "prijmeni": "Fus",
+            "jmeno": "Karel",
+            "titulPred": None,
+            "titulZa": None,
+            "rcZkracene": "970419",
+            "ulice": None,
+            "cisloDomovni": 5,
+            "cisloOrientacni": None,
+            "castObceNazev": "Hošťálkovy",
+            "obecNazev": "Hošťálkovy",
+            "mestskaCastNazev": None,
+            "mestskyObvodNazev": None,
+            "psc": 11000,
+            "vlastnikTyp": "OFO",
+            "typCpCe": "1",
+            "statNazev": None,
+            "okresNazev": None,
+            "charOSType": 2,
+            "partner1": None,
+            "partner2": None
         }
     ],
-    'vlastnictvi': [
+    "vlastnictvi": [
         {
-            'idVlastnictvi': 1067155306,
-            'lvId': 674691306,
-            'podilCitatel': 1,
-            'podilJmenovatel': 2,
-            'typPravnihoVztahuKod': '30',
-            'katuzeKod': 693936,
-            'lvCislo': 310,
-            'osId': 421450302,
-            'parcelaId': None,
-            'budovaId': None,
-            'jednotkaId': None,
-            'pravoStavbyId': None
+            "idVlastnictvi": 1067155306,
+            "lvId": 674691306,
+            "podilCitatel": 1,
+            "podilJmenovatel": 2,
+            "typPravnihoVztahuKod": "30",
+            "katuzeKod": 693936,
+            "lvCislo": 310,
+            "osId": 421450302,
+            "parcelaId": None,
+            "budovaId": None,
+            "jednotkaId": None,
+            "pravoStavbyId": None
         },
         {
-            'idVlastnictvi': 1067156306,
-            'lvId': 674691306,
-            'podilCitatel': 1,
-            'podilJmenovatel': 2,
-            'typPravnihoVztahuKod': '30',
-            'katuzeKod': 693936,
-            'lvCislo': 310,
-            'osId': 414306306,
-            'parcelaId': None,
-            'budovaId': None,
-            'jednotkaId': None,
-            'pravoStavbyId': None
+            "idVlastnictvi": 1067156306,
+            "lvId": 674691306,
+            "podilCitatel": 1,
+            "podilJmenovatel": 2,
+            "typPravnihoVztahuKod": "30",
+            "katuzeKod": 693936,
+            "lvCislo": 310,
+            "osId": 414306306,
+            "parcelaId": None,
+            "budovaId": None,
+            "jednotkaId": None,
+            "pravoStavbyId": None
         }
     ],
-    'parcela': [
+    "parcela": [
         {
-            'idParcely': 3169359306,
-            'parcelaType': 'PKN',
-            'katuzeKod': 693936,
-            'katuzePuv': None,
-            'kmenoveCislo': 2302,
-            'poddeleniCisla': None,
-            'dil': None,
-            'zpUrVyKod': 0,
-            'typZE': None,
-            'drupozKod': 10,
-            'zpuvypaKod': None,
-            'typ': None,
-            'vymera': 26,
-            'lvId': 674691306,
-            'druhCislovaniPar': '2',
-            'stavba': None,
-            'stavbaSoucastiParcely': 'n',
-            'pravoStavby': None
+            "idParcely": 3169359306,
+            "parcelaType": "PKN",
+            "katuzeKod": 693936,
+            "katuzePuv": None,
+            "kmenoveCislo": 2302,
+            "poddeleniCisla": None,
+            "dil": None,
+            "zpUrVyKod": 0,
+            "typZE": None,
+            "drupozKod": 10,
+            "zpuvypaKod": None,
+            "typ": None,
+            "vymera": 26,
+            "lvId": 674691306,
+            "druhCislovaniPar": "2",
+            "stavba": None,
+            "stavbaSoucastiParcely": "n",
+            "pravoStavby": None
         }
     ],
-    'stavba': [],
-    'jednotka': [],
-    'pravoStavby': []
+    "stavba": [],
+    "jednotka": [],
+    "pravoStavby": []
 }
 
 ```
