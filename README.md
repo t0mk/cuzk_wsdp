@@ -50,7 +50,7 @@ Z tohoto vyplyva, ze jen "sestavy" jsou zpoplatnene podle toho ceniku (pdf je dr
 vystup z
  
 ```python
-print(CUZKClient("informace").service.dejNahledLV(katuzeKod=KUID, lvCislo=310))
+print(CUZKClient("informace").service.dejNahledLV(katuzeKod='693936', lvCislo=310))
 ```
 
 ```json
